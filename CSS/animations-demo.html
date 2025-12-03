@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html><head>
+<html>
+
+<head>
     <style>
         div {
             width: 200px;
@@ -7,6 +9,7 @@
             background-color: orange;
             animation-name: anim;
             animation-duration: 15s;
+            animation-delay: 10s;
         }
 
         @keyframes anim {
@@ -21,7 +24,52 @@
             }
         }
     </style>
+
+    <style>
+        #div2 {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background-color: red;
+            animation-name: test;
+            animation-duration: 5s;
+            animation-delay: 2s;
+        }
+
+        @keyframes test {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                background-color: blue;
+                left: 100px;
+                top: 0px;
+            }
+
+            50% {
+                background-color: orange;
+                left: 100px;
+                top: 100px;
+            }
+
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 100px;
+            }
+
+            100% {
+                background-color: grey;
+                left: 0px;
+                top: 0px;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <h2>CSS Animation</h2>
     <div></div>
@@ -29,6 +77,8 @@
         CSS animation. The keyframe decides the
         style or animation of the element at
         certain times. </p>
+
+        <div id="div2"></div>
 </body>
 
 </html>
