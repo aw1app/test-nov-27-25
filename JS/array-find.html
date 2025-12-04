@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>The find() Method</h2>
+    <p>Click "Result" to return the value of the array's first element that has a
+        value above this number:</p>
+
+
+    <p><input type="number" id="numberCheck" value="15"></p>
+
+    <button onclick="myFunction()">Result</button>15100
+
+    <p id="result">   </p>
+
+    <script>
+        const ages = [52, 19, 29, 44];
+        let checkNumber = age => age > document.getElementById("numberCheck").value;
+       
+        function myFunction() {
+            document.getElementById("result").innerHTML = ages.find(checkNumber);
+        }
+    </script>
+</body>
+
+</html>
