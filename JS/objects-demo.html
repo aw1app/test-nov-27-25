@@ -1,0 +1,61 @@
+<script>
+    const user1 = {
+        name: "Mike Hary",
+        email: "mike.hary@example.com",
+        age: 30, weight: 60
+    };
+
+</script>
+
+
+<script>
+
+    const circle = {
+        radius: 2,
+        drawpicture() {
+            console.log("drawpicture");
+        }
+    };
+
+
+    for (let key in circle)
+        console.log(key, circle[key]);
+
+</script>
+
+
+<script>
+    // Factory function to create car objects
+
+    function createCar(make, model, year) {
+        return {
+            make: make,
+            model: model,
+            year: year,
+            getCarInfo: function () {
+                return `${this.year} ${this.make} ${this.model}`;
+            }
+        };
+    }
+
+
+    const car1 = createCar('Toyota', 'Corolla', 2021);
+    let car1Details = car1.getCarInfo();
+    console.log("car1Details = ", car1Details);
+
+</script>
+
+
+<script>
+    // objects using new operator
+     console.log("\n\nobjects using new operator");
+
+    function Student(n,a) {
+        this.name = n;
+        this.age = a;
+    }
+    // create an object
+    const student1 = new Student("Reet",25);
+    console.log("student1 = ", student1);
+
+</script>
