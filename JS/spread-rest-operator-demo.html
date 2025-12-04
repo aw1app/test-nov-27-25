@@ -27,7 +27,7 @@
 </script>
 
 <script>
-let studentsGroup1 = [
+    let studentsGroup1 = [
         new Student("BALU", 28, 5.9),
         new Student("SHALU", 11, 5.5)
     ];
@@ -37,7 +37,33 @@ let studentsGroup1 = [
         new Student("Palani", 19, 5.5)
     ];
 
-    let combinedGroup =[...studentsGroup1, ...studentsGroup2];
+    let combinedGroup = [...studentsGroup1, ...studentsGroup2];
     console.log("combinedGroup =", combinedGroup);
 
+</script>
+
+
+<script>
+    // REST operator demo
+    console.log("\n\nREST operator demo");
+    let [s1, ...remainingStudents] = combinedGroup;
+    console.log("remainingStudents=", remainingStudents);
+
+</script>
+
+<script>
+    // Demo forEach method of an array
+    remainingStudents.forEach(student => console.log(student.name.toUpperCase()));
+</script>
+
+<script>
+// Demo map method of an array
+let namesInCapsArray = remainingStudents.map(  student => student.name.toUpperCase()  );
+namesInCapsArray.forEach( name => console.log(name) );
+
+</script>
+
+<script>
+    // Filter demo
+    //TASK-5: Print the names of only those of remaining students whose name begins with r/R .
 </script>
