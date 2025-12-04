@@ -1,0 +1,42 @@
+<script>
+
+    function Student(name, age, height) {
+        this.name = name;
+        this.age = age;
+        this.height = height;
+    };
+
+    let studentsArray = [
+        new Student("ram", 28, 5.9),
+        new Student("sam", 19, 5.5),
+        new Student("jay", 40, 6.0),
+        new Student("mohan", 18, 5.4),
+        new Student("rohan", 21, 5.8)
+    ];
+
+
+    function averageAgeOfStudents(s1, s2, s3) {
+        return (s1.age + s2.age + s3.age) / 3;
+    };
+
+    let avgRes1 = averageAgeOfStudents(studentsArray[0], studentsArray[1], studentsArray[2]);
+    console.log("avgRes1", avgRes1);
+
+    let avgRes2 = averageAgeOfStudents(...studentsArray);
+    console.log("avgRes2", avgRes2);
+</script>
+
+<script>
+let studentsGroup1 = [
+        new Student("BALU", 28, 5.9),
+        new Student("SHALU", 11, 5.5)
+    ];
+
+    let studentsGroup2 = [
+        new Student("Prema", 28, 5.9),
+        new Student("Palani", 19, 5.5)
+    ];
+
+    let combinedGroup =[...studentsGroup1, ...studentsGroup2];
+
+</script>
