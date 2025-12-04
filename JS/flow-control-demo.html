@@ -117,8 +117,59 @@
         if (j == 8) continue;
         console.log("after continue j", j);
     };
-    
-    //Task-4 : Create a colors array of some 6 colors. Then print all the colors using a for loop except the third color.
 
+    //Task-4 : Create a colors array of some 6 colors. Then print all the colors using a for loop except the third color.
+    //SOLN-1
+    console.log("SOLN 2 (Abdulrahaman) : ");
+    let colors = ["white", "red", "blue", "green", "orange", "purple"];
+    for (let i = 0; i < 6; i++) {
+        if (i == 2) {
+            console.log(`Skipping ${i + 1} element.\n`);
+            continue;
+        }
+        console.log(`${colors[i]}\n`);
+    }
+
+    //SOLN-2:
+    console.log("SOLN 2 (bbirajda) : ");
+    colors = ["green", "yellow", "blue", "white", "grey", "red"];
+    console.log("colors", colors);
+    j = 0;
+    while (j < colors.length) {
+        if (j == 2) {
+            j++;
+            continue;
+        }
+        console.log(`colors[${j}] = ${colors[j]}`);
+        j++;
+    }
+
+</script>
+
+
+<script>
+    console.log("\n\n demo object looping using for .. in \n");
+
+    let var1 = new Object();
+    var1.x1 = 10;
+    var1.x2 = 20;
+    var1.location = "Bangalore";
+
+    console.log("var1", var1);
+
+    for (i in var1) {
+        console.log(var1[i]);
+    }
+
+</script>
+
+<script>
+    console.log("\n\n demo iterable looping using for .. of \n");
+    let mycolors = ["green", "yellow", "blue", "white", "grey", "red"];
+    console.log(mycolors);
+
+    for (item of mycolors) {
+        console.log(item);
+    }
 
 </script>
