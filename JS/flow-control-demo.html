@@ -17,9 +17,9 @@
 <script>
     console.log("\n\n demo switch \n");
 
-     let day = new Date().getDay(); // Gets the current day of the week (0 - 6)
+    let day = new Date().getDay(); // Gets the current day of the week (0 - 6)
 
-     switch (day) {
+    switch (day) {
         case 0:
             console.log('Today is Sunday.');
             break;
@@ -44,7 +44,80 @@
         default:
             console.log('Invalid day.');
     }
+</script>
 
+<script>
+    // demo looping
+
+    // using while
+    console.log("demo using while\n");
+
+    let j = 0;
+
+    while (j < 5) {
+        console.log("j", j);
+        j++;
+    };
+
+    // using do while
+    console.log("\n\n demo using do while\n");
+    let k = 0;
+
+    do {
+        console.log("k", k);
+        k++;
+    } while (k < 5);
+
+    // using for
+    console.log("-- demo looping using for --");
+    for (let i = 0; i < 5; i++) {
+        console.log("INSIDE for loop i = ", i);
+    };
+
+</script>
+
+<script>
+    // demo loping with breaks
+
+    // using for with break
+    console.log("demo using for with break\n")
+    for (let i = 0; i < 10; i++) {
+        console.log("i", i);
+        if (i == 5) break;
+    };
+
+    // using while
+    console.log("demo using while with break \n")
+    j = 0;
+    while (j < 10) {
+        console.log("j", j);
+        j++;
+        if (j == 6) break;
+    };
+
+</script>
+
+<script>
+    console.log("\n demo loping with continue");
+
+    console.log("for with continue\n")
+
+    for (let i = 0; i < 10; i++) {
+        console.log("before continue i", i);
+        if (i == 5) continue;
+        console.log("after continue i", i);
+    };
+
+    //using while
+    console.log("demo using while with continue \n")
+    j = 0;
+    while (j < 10) {
+        console.log("before continue j", j);
+        j++;
+        if (j == 8) continue;
+        console.log("before continue j", j);
+    };
+    //
 
 
 </script>
