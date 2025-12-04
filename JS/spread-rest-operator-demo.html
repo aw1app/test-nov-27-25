@@ -66,4 +66,6 @@ namesInCapsArray.forEach( name => console.log(name) );
 <script>
     // Filter demo
     //TASK-5: Print the names of only those of remaining students whose name begins with r/R .
+    let remainingStudentsNamesStartingWithR = remainingStudents.filter(  student => student.name.toLowerCase().startsWith("r") );
+    remainingStudentsNamesStartingWithR.forEach( name => console.log(name) );
 </script>
