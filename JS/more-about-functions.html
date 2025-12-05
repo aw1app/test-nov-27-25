@@ -11,7 +11,7 @@
 </script>
 
 <script>
-    //CALLBAK FUNCTIONS DEMO
+    //CALLBACK FUNCTIONS DEMO
     function g1(X, Y) {
         console.log("INSIDE g1 function")
         // do something with X and Y.
@@ -30,5 +30,23 @@
     }
 
     g1(g2, g3);
+
+</script>
+
+<script>
+    // FUNCTIONS IN JS can also return functions
+
+    function h1(){
+        console.log("INSIDE h1 function");
+
+        let h2 = function(m,n){
+            console.log("INSIDE h2 function");
+        };
+
+        return h2;
+    };
+
+    let h3 = h1();
+    h3();
 
 </script>
