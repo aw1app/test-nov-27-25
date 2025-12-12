@@ -1,18 +1,20 @@
 <html>
 
 <body>
-<h1>Welcome <user [id]="1" [name]="'User1'" /> to my Amazon.com </h1>
+    <h1>Welcome
+        <user [id]="1" [name]="'User1'" /> to my Amazon.com
+    </h1>
 
 
-<product-list [products]="sampleProducts"/>
+    <product-list [products]="sampleProducts" />
 
-<hr/>
+    <hr />
 
-<product [id]="1" [name]="'SonyTV'" [price]="25000" (priceEvent)="processPriceEvent($event)"></product>
-<product [id]="2" [name]="'PhillipsTV'" [price]="15000" (priceEvent)="processPriceEvent($event)"></product>
+    <product [id]="1" [name]="'SonyTV'" [price]="25000" (priceEvent)="processPriceEvent($event)"></product>
+    <product [id]="2" [name]="'PhillipsTV'" [price]="15000" (priceEvent)="processPriceEvent($event)"></product>
 
-<product [id]="3" [name]="'OnidaTV'" [price]="26000"></product>
-<product [id]="4" [name]="'GoogleTV'" [price]="15500" ></product>
+    <product [id]="3" [name]="'OnidaTV'" [price]="26000"></product>
+    <product [id]="4" [name]="'GoogleTV'" [price]="15500"></product>
 
 </body>
 
