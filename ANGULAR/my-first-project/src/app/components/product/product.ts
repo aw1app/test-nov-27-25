@@ -25,9 +25,11 @@ export class ProductComponent {
   priceFontSize: string = "20px";
 
   //style controlling variable for class bindling
+  // using [class.classname]
   highlightY: boolean = true;
   highlightG: boolean = true;
 
+  // class binding using [class]
   classHighlightr: string = 'highlightGreen';
 
   changeHightLightColor(): void {
