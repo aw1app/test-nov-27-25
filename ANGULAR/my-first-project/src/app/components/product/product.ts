@@ -20,6 +20,10 @@ export class ProductComponent {
 
   description:string = "Default description";
 
+  //style controlling variable
+  priceColor:string="red";
+  priceFontSize:string="20px";
+
   addToCart() {
     alert(` Ok, added ${this.name} to the Cart!`);
   }

@@ -1,7 +1,7 @@
 <div style="border:solid 1px blue">
 
     <div class="product-name">{{name }}</div>
-    <p>{{price }}</p>
+    <p [style.color]="priceColor" [style.fontSize]="priceFontSize" >{{price }}</p>
     <p>{{description}}</p>
 
     Description: <input type="text" [(ngModel)]="description" />
