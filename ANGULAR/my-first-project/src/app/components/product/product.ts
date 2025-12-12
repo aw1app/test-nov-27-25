@@ -19,5 +19,9 @@ export class ProductComponent {
 
   description:string = "Default description";
 
+  addToCart() {
+    alert(` Ok, added ${this.name} to the Cart!`);
+  }
+
 
 }
