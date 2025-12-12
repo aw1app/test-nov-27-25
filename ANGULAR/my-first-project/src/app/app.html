@@ -8,8 +8,8 @@
 
 <hr/>
 
-<product [id]="1" [name]="'SonyTV'" [price]="25000"></product>
-<product [id]="2" [name]="'PhillipsTV'" [price]="15000" ></product>
+<product [id]="1" [name]="'SonyTV'" [price]="25000" (priceEvent)="processPriceEvent($event)"></product>
+<product [id]="2" [name]="'PhillipsTV'" [price]="15000" (priceEvent)="processPriceEvent($event)"></product>
 
 <product [id]="3" [name]="'OnidaTV'" [price]="26000"></product>
 <product [id]="4" [name]="'GoogleTV'" [price]="15500" ></product>

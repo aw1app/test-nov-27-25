@@ -26,4 +26,9 @@ export class App {
     this.sampleProducts.push( new Product(2, "Samsumg Laptop", 40000, "Gaming Laptop", false, "IMAGES/samsung.png") );
   }
 
+  // process the priceEvent event emitted from product components.
+  processPriceEvent(evt:any):void{
+    alert(` product comp child emitted an event and data in that event is ${evt}`);
+  }
+
 }

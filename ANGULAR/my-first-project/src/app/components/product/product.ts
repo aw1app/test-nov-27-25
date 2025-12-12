@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -13,7 +13,7 @@ export class ProductComponent {
   // name!: string;
   // price!:number;
 
-  // Inputs from the parent component
+  // Inputs from the parent component to recieve property data
   @Input("id") id!: number;
   @Input("name") name!: string;
   @Input("price") price!: number;
@@ -41,5 +41,12 @@ export class ProductComponent {
     alert(` Ok, added ${this.name} to the Cart!`);
   }
 
+
+  // demo passing data to the parent using @Output 
+  @Output() priceEvent = new EventEmitter<number>();
+
+   onPriceEvent() {
+    this.priceEvent.emit(this.price);
+  }
 
 }
