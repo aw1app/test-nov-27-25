@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './product.html',
   styleUrl: './product.css',
 })
-export class Product {
+export class ProductComponent {
 
   // id! : number;
   // name!: string;

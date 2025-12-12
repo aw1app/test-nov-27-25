@@ -1,0 +1,13 @@
+<div style="border:solid 1px ORANGE">
+
+<H2>PRODUCT LIST</H2>
+
+<div *ngFor="let prod of products;">
+
+     <p> {{prod.id}}, {{prod.name}},  {{prod.price}} </p>
+     <img [src]="prod.imagePath" width="200" height="150" />
+    
+</div>
+
+
+</div>
