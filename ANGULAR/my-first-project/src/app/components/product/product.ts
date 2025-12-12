@@ -18,13 +18,24 @@ export class ProductComponent {
   @Input("name") name!: string;
   @Input("price") price!: number;
 
-  description:string = "Default description";
+  description: string = "Default description";
 
-  //style controlling variable
-  priceColor:string="red";
-  priceFontSize:string="20px";
+  //style controlling variable for style bindling
+  priceColor: string = "red";
+  priceFontSize: string = "20px";
 
-  addToCart() {
+  //style controlling variable for class bindling
+  highlightY: boolean = true;
+  highlightG: boolean = true;
+
+  classHighlightr: string = 'highlightGreen';
+
+  changeHightLightColor(): void {
+    // toggle b/w yellow and green
+    this.classHighlightr =    this.classHighlightr == 'highlightYellow'?  'highlightGreen' : 'highlightYellow';
+  }
+
+  addToCart(): void {
     alert(` Ok, added ${this.name} to the Cart!`);
   }
 

@@ -2,3 +2,15 @@
     font-size: 24px;
     color: blueviolet;
 }
+
+
+.highlightYellow {
+  background-color: yellow;
+}
+.highlightGreen {
+  background-color: greenyellow;
+}
+
+.normal {
+  background-color: white;
+}
