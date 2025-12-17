@@ -13,13 +13,23 @@ export class ProductService {
   constructor(){
     this.products=[];
     this.products.push(new Product(1, "HP Laptop", 20000, "Gaming Laptop", true, "IMAGES/hp-laptop.png", 0));
-    this.products.push(new Product(2, "Samsumg Laptop", 40000, "Gaming Laptop", false, "IMAGES\hp.jpg", 0));
-    this.products.push(new Product(3, "Lenova Laptop", 20500, "Gaming Laptop", true, "IMAGES\hp.jpg", 0));
-    this.products.push(new Product(3, "Sony Laptop", 22000, "Gaming Laptop", true, "IMAGES\hp.jpg", 0));
+    this.products.push(new Product(2, "Samsumg Laptop", 40000, "Gaming Laptop", false, "IMAGES/hp.jpg", 0));
+    this.products.push(new Product(3, "Lenova Laptop", 20500, "Gaming Laptop", true, "IMAGES/hp.jpg", 0));
+    this.products.push(new Product(3, "Sony Laptop", 22000, "Gaming Laptop", true, "IMAGES/hp.jpg", 0));
   }
 
   getProducts():Product[]{
     return this.products;
+  }
+
+  getProduct(id:number):Product{
+    return this.products[id];
+  }
+
+  addProduct( prod:Product):void{
+    console.log("INSIDE Product Service's addProduct","ADDING a new Product",prod);
+    this.products.push(prod);
+    console.log("INSIDE Product Service's addProduct","Latest Prod list",this.products);
   }
   
 }
