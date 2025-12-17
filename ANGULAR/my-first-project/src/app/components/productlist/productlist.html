@@ -17,8 +17,8 @@
         <tr *ngFor="let prod of products; index as i;">
             <td>{{i}}</td>
             <td>{{prod.id}}
-            <td > {{prod.name}}
-            <td> {{prod.price}}
+            <td > {{prod.name | uppercase}}
+            <td> {{prod.price | currency }}
             <td> <img [src]="prod.imagePath" width="100" height="50" /></td>
 
             <!-- demo switch directive -->

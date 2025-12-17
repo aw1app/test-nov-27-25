@@ -4,10 +4,11 @@ import { ProductComponent } from './components/product/product';
 import { User } from './components/user/user';
 import { Product } from './models/product';
 import { ProductListComponent } from './components/productlist/productlist';
+import { DatePipe, JsonPipe, PercentPipe, SlicePipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [ProductComponent, User, ProductListComponent],
+  imports: [ProductComponent, User, ProductListComponent, DatePipe, PercentPipe, SlicePipe, JsonPipe],
   templateUrl: './app.html',
   //template:'Hi {{x}} ',
   styleUrl: './app.css'
@@ -15,20 +16,30 @@ import { ProductListComponent } from './components/productlist/productlist';
 export class App {
   protected readonly title = "online shopping";
 
-  x=100;
+  x = 100;
 
 
-  sampleProducts!:Product[];
+  sampleProducts!: Product[];
 
-  constructor(){
-    this.sampleProducts=[];
-    this.sampleProducts.push( new Product(1, "HP Laptop", 20000, "Gaming Laptop", true, "IMAGES/hp.png"));
-    this.sampleProducts.push( new Product(2, "Samsumg Laptop", 40000, "Gaming Laptop", false, "IMAGES/samsung.png") );
+  constructor() {
+    this.sampleProducts = [];
+    this.sampleProducts.push(new Product(1, "HP Laptop", 20000, "Gaming Laptop", true, "IMAGES/hp.png"));
+    this.sampleProducts.push(new Product(2, "Samsumg Laptop", 40000, "Gaming Laptop", false, "IMAGES/samsung.png"));
   }
 
   // process the priceEvent event emitted from product components.
-  processPriceEvent(evt:any):void{
+  processPriceEvent(evt: any): void {
     alert(` product comp child emitted an event and data in that event is ${evt}`);
   }
+
+
+  // properties/variables for Pipes demo
+  today = new Date();
+  percentage = 0.256;
+  users = ['Ravi', 'Anita', 'John', 'Meera'];
+  car1={
+    name:'Maruti Swift',
+    price:6000000
+  };
 
 }

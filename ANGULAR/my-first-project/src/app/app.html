@@ -16,6 +16,15 @@
     <product [id]="3" [name]="'OnidaTV'" [price]="26000"></product>
     <product [id]="4" [name]="'GoogleTV'" [price]="15500"></product>
 
+
+    <hr/>
+    <!-- Pipes Demo-->
+     <h2>PIPES DEMO </h2>
+     WITHOUT PIPE: Today is {{today}} <br> WITH date PIPE: Today is {{today|date:'fullDate'}}
+     <br> WITHOUT PIPE: percentage is {{percentage}} <br> WITH percent PIPE: percentage is {{ percentage | percent}}
+     <p>Slice pipe demo to show users 1-3: {{ users | slice:1:3 }}</p>
+     <p>JSONpipe demo for car1 object WITHOUT json pipe {{car1}} , WITH json pipe {{ car1 | json }}</p>
+
 </body>
 
 
