@@ -15,8 +15,8 @@ export class ProductListComponent {
   products!: Product[];
   productService!:ProductService
 
-  constructor(productService:ProductService) {
-    this.productService = productService;
+  constructor(productServ:ProductService) {
+    this.productService = productServ;
   }
 
   ngOnInit():void {
