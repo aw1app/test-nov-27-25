@@ -5,10 +5,11 @@ import { User } from './components/user/user';
 import { Product } from './models/product';
 import { ProductListComponent } from './components/productlist/productlist';
 import { DatePipe, JsonPipe, PercentPipe, SlicePipe } from '@angular/common';
+import { TriplePipe } from './pipes/triple.pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [ProductComponent, User, ProductListComponent, DatePipe, PercentPipe, SlicePipe, JsonPipe],
+  imports: [ProductComponent, User, ProductListComponent, DatePipe, PercentPipe, SlicePipe, JsonPipe, TriplePipe],
   templateUrl: './app.html',
   //template:'Hi {{x}} ',
   styleUrl: './app.css'
@@ -41,5 +42,8 @@ export class App {
     name:'Maruti Swift',
     price:6000000
   };
+
+  //custom pipe demo
+  x1=100;
 
 }
