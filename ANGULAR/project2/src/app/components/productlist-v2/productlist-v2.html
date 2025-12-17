@@ -15,7 +15,8 @@
             <td>{{prod.id}}
             <td> {{prod.name | uppercase}}
             <td> {{prod.price | currency }}
-            <td> <img [src]="prod.imagePath" width="100" height="50" /></td>         
+            <td> <img [src]="prod.imagePath" width="100" height="50" /></td>  
+            <td> <button (click)="delete(prod.id)"> DELETE </button> </td>       
 
         </tr>
 

@@ -36,4 +36,12 @@ export class ProductServiceV2 {
     this.productsSubject.next([...currentProductList, prod]);
   }
 
+  deleteProduct(id:number):void{
+     const currentProductList = this.productsSubject.value; // get current product list
+     let newProductList = currentProductList.filter( prod => prod.id !==id );
+
+    // update the list
+    this.productsSubject.next(newProductList);
+  }
+
 }

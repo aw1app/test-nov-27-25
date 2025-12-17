@@ -29,7 +29,10 @@ export class ProductListComponentV2 {
         }
       }
     );
+  }
 
+  delete(id:number):void{
+    this.productServiceV2.deleteProduct(id);
   }
 
 }
