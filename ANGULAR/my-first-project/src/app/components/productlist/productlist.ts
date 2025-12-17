@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../../models/product';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 
 @Component({
   selector: 'product-list',
-  imports: [CommonModule],
+  imports: [CommonModule, NgSwitch, NgSwitchCase, NgSwitchDefault],
   templateUrl: './productlist.html',
   styleUrl: './productlist.css',
 })

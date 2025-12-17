@@ -1,0 +1,13 @@
+.black-text-blue-border-rose-bk {
+    color: black;
+    border: 1px solid blue;
+    background-color: rgb(249, 193, 236);
+}
+
+.bk-blue {
+    background-color: rgb(110, 220, 237);
+}
+
+.error-message {
+    color: red;
+}

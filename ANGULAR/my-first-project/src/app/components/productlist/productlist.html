@@ -2,21 +2,41 @@
 
     <H2>PRODUCT LIST</H2>
 
-    
+
     <table border="1" *ngIf="products.length>0 ; else elseBlock">
 
-        <tr><th>ID </th> <th>NAME </th> <th>PRICE </th> <th>PHOTO </th></tr>
-
-        <tr *ngFor="let prod of products;">
-            <td>{{prod.id}}
-            <td> {{prod.name}}
-            <td> {{prod.price}}
-            <td> <img [src]="prod.imagePath" width="100" height="50" /></td>
+        <tr [ngClass]="{'black-text-blue-border-rose-bk':products.length<5}" >
+            <th>Index </th>
+            <th>ID </th>
+            <th>NAME </th>
+            <th>PRICE </th>
+            <th>PHOTO </th>
+            <th [ngStyle]="{ color: 'yellow', fontSize: '18px' }">Expensive </th>
         </tr>
 
+        <tr *ngFor="let prod of products; index as i;">
+            <td>{{i}}</td>
+            <td>{{prod.id}}
+            <td > {{prod.name}}
+            <td> {{prod.price}}
+            <td> <img [src]="prod.imagePath" width="100" height="50" /></td>
+
+            <!-- demo switch directive -->
+            <td [ngSwitch]="prod.price">
+                <p *ngSwitchCase="10000"> NOt Expensive</p>
+                <p *ngSwitchCase="20000"> May be Expensive</p>
+                <p *ngSwitchCase="30000"> Expensive </p>
+                <p *ngSwitchDefault>Unknown </p>
+            </td>
+
+        </tr>
 
     </table>
 
-    <ng-template #elseBlock>  No Products to Display </ng-template >
+    <ng-template #elseBlock> No Products to Display </ng-template>
+
+
+
+
 
 </div>
