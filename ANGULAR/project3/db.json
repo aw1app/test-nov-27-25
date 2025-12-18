@@ -18,6 +18,15 @@
       "inStock": true,
       "imagePath": "",
       "bidAmount": 100
+    },
+    {
+      "id": 4839,
+      "name": "prod4",
+      "price": "4000",
+      "description": "",
+      "inStock": true,
+      "imagePath": "",
+      "bidAmount": 100
     }
   ]
 }

@@ -1,0 +1,27 @@
+<div style="border: solid 1px green; padding: 10px">
+
+  <h2>PRODUCT DETAILS</h2>
+
+  <ng-container *ngIf="product$ | async as product; else loading">
+
+    <div *ngIf="product; else notFound">
+
+      <p><b>ID:</b> {{ product.id }}</p>
+      <p><b>Name:</b> {{ product.name }}</p>
+      <p><b>Price:</b> {{ product.price | currency }}</p>
+
+      <img [src]="product.imagePath" width="200" />
+
+    </div>
+
+  </ng-container>
+
+  <ng-template #loading>
+    Loading product...
+  </ng-template>
+
+  <ng-template #notFound>
+    Product not found
+  </ng-template>
+
+</div>
