@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../models/product';
 import { BehaviorSubject, Observable, of, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root',
@@ -51,6 +51,7 @@ export class ProductServiceV3 {
   deleteProduct(id: number): void {
     this.http.delete(`${this.apiUrl}/${id}`).subscribe({
       next: (data) => {
+        console.log('Product deleted from backend, id =', id);
         const currentProductList = this.productsSubject.value;
         const updatedProductList = currentProductList.filter(p => p.id !== id);
         this.productsSubject.next(updatedProductList);

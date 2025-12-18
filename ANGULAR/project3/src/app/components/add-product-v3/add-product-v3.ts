@@ -26,6 +26,7 @@ export class AddProductComponentV3 {
       {
         productName: ['', [Validators.required, Validators.minLength(3)]],
         productPrice: ['', [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/), Validators.max(100000)]],
+        productImage: [''],
         inStock: [true]
       }
 
@@ -48,10 +49,12 @@ export class AddProductComponentV3 {
       let name = this.productForm.get('productName')?.value;
       let price = this.productForm.get('productPrice')?.value;
       let inStock = this.productForm.get('inStock')?.value;
+      let productImage = this.productForm.get('productImage')?.value;
+      
 
       let id = this.getRandomInt(1000, 10000);
 
-      let tempProduct = new Product(id, name, price, '', inStock, '', 100);
+      let tempProduct = new Product(id, name, price, '', inStock, productImage, 100);
       console.log("INSIDE addProduct of Add prod comp  v3 pos-1 tempProduct=", tempProduct );
       //Call the Product Service 
       this.productServiceV3.addProduct(tempProduct);
