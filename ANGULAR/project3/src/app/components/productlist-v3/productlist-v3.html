@@ -1,6 +1,6 @@
 <div class="container mt-4" style="border:solid 1px BLUE">
 
-    <H2>PRODUCT LIST V3</H2>
+    <H2>PRODUCT LIST V3</H2><br><br>
 
     <ng-container *ngIf="products$ | async as products">
 
@@ -8,19 +8,22 @@
             <div class="col-md-8 col-lg-6">
                 <table class="table table-bordered table-striped" *ngIf="products.length>0 ; else elseBlock">
 
-                    <tr>
+                    <tr class="table-light">
                         <th>ID </th>
                         <th>NAME </th>
                         <th>PRICE </th>
                         <th>PHOTO </th>
+                        <th>ACTION </th>
 
                     <tr *ngFor="let prod of products; index as i;">
                         <td>{{prod.id}}
                         <td> {{prod.name | uppercase}}
                         <td> {{prod.price | currency }}
                         <td> <img [src]="prod.imagePath" width="100" height="50" /></td>
-                        <td> <button class="btn btn-primary btn-sm" (click)="showDetails(prod.id)"> SHOW DETAILS </button>
-                        <td> <button class="btn btn-outline-danger" (click)="delete(prod.id)"> DELETE </button> </td>
+                        <td> <button type="button" class="btn btn-primary" data-bs-toggle="button" (click)="showDetails(prod.id)"> SHOW DETAILS
+                            </button>  &nbsp;
+                            <button class="btn btn-danger" (click)="delete(prod.id)"> DELETE </button>
+                        </td>
 
                     </tr>
 
