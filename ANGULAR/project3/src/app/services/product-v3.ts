@@ -16,7 +16,7 @@ export class ProductServiceV3 {
   products$ = this.productsSubject.asObservable(); // products$ is of the type Observable<Product[]> 
 
   // web service providing products data
-  private apiUrl = 'http://localhost:3000/products';
+  private apiUrl = 'http://localhost:3001/products';
 
   constructor(private http: HttpClient) { }
 

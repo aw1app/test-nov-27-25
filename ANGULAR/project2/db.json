@@ -2,22 +2,13 @@
   "products": [
     {
       "name": "HP Laptop",
-      "price": 40000,
-      "id": "1"
+      "price": 20000,
+      "id": 1
     },
     {
-      "name": "Dell Laptop",
-      "price": 45000,
-      "id": "2"
-    },
-    {
-      "id": 6110,
-      "name": "prod3",
-      "price": "1000",
-      "description": "",
-      "inStock": true,
-      "imagePath": "",
-      "bidAmount": 100
+      "name": "Lenova Laptop",
+      "price": 60000,
+      "id": 3
     }
   ]
 }

@@ -1,0 +1,23 @@
+{
+  "products": [
+    {
+      "name": "HP Laptop",
+      "price": 20000,
+      "id": "1"
+    },
+    {
+      "name": "Lenova Laptop",
+      "price": 60000,
+      "id": "3"
+    },
+    {
+      "id": 7911,
+      "name": "Prod3",
+      "price": "10000",
+      "description": "",
+      "inStock": true,
+      "imagePath": "",
+      "bidAmount": 100
+    }
+  ]
+}
