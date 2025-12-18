@@ -18,7 +18,7 @@
                     <tr *ngFor="let prod of products; index as i;">
                         <td>{{prod.id}}
                         <td> {{prod.name | uppercase}}
-                        <td> {{prod.price | currency }}
+                        <td> {{prod.price | currency:'INR' }}
                         <td> <img [src]="prod.imagePath" width="100" height="50" /></td>
                         <td> <button type="button" class="btn btn-primary" data-bs-toggle="button" (click)="showDetails(prod.id)"> SHOW DETAILS
                             </button>  &nbsp;
