@@ -1,0 +1,18 @@
+{
+
+    "products": [
+        {
+            "name": "HP Laptop",
+            "price": 40000,
+            "id":1
+        },
+        {
+            "name": "Dell Laptop",
+            "price": 45000,
+            "id":2
+        }
+    ]
+
+
+
+}
