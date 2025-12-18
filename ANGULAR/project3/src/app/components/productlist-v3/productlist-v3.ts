@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/product';
 import { ProductServiceV3 } from '../../services/product-v3';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'productlist-v3',
@@ -18,7 +19,7 @@ export class ProductListComponentV3 implements OnInit{
 
   products$!: Observable<Product[]>;
 
-  constructor( productServ: ProductServiceV3) {
+  constructor( productServ: ProductServiceV3, private router: Router) {
     this.productServ=productServ;    
    }
 
@@ -29,6 +30,9 @@ export class ProductListComponentV3 implements OnInit{
   };
 
   
+  showDetails(id:number):void{
+    this.router.navigate(['product',id]);
+  }
 
   delete(id:number):void{
    this.productServ.deleteProduct(id);
