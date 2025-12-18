@@ -36,12 +36,15 @@ export class ProductServiceV3 {
   }
 
   addProduct(prod: Product): void {
+    console.log("INSIDE addProduct of PS v3");
+
     this.http.post<Product>(this.apiUrl, prod).pipe(
       tap(newProduct => {
+        console.log("INSIDE addProduct of PS v3 newProduct=", newProduct);
         const currentProductList = this.productsSubject.value;
         this.productsSubject.next([...currentProductList, newProduct]);
       })
-    );
+    ).subscribe();
   }
 
 

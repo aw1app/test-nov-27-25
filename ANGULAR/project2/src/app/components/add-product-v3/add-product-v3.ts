@@ -44,6 +44,7 @@ export class AddProductComponentV3 {
   addProduct(): void {
     console.log("INSIDE addProduct function");
     if (this.productForm.valid) {
+       console.log("INSIDE addProduct of Add prod comp  v3 pos-1" );
       let name = this.productForm.get('productName')?.value;
       let price = this.productForm.get('productPrice')?.value;
       let inStock = this.productForm.get('inStock')?.value;
@@ -51,6 +52,7 @@ export class AddProductComponentV3 {
       let id = this.getRandomInt(1000, 10000);
 
       let tempProduct = new Product(id, name, price, '', inStock, '', 100);
+      console.log("INSIDE addProduct of Add prod comp  v3 pos-1 tempProduct=", tempProduct );
       //Call the Product Service 
       this.productServiceV3.addProduct(tempProduct);
     }
