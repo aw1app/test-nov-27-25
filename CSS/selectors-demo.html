@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Internal CSS</title>
+    <style>
+        /* Universal selector style */
+        * {
+            font-size: 15px
+        }
+
+        /* type or Element or tag selector style */
+        span {
+            color: orange;
+            background-color: aqua;
+        }
+
+        p {
+            color: orange;
+            background-color: aqua;
+        }
+
+        h3 {
+            color: blue;
+            font-size: 25px
+        }
+    </style>
+
+    <style>
+        /* id selector style example*/
+        #para15 {
+            background-color: yellow;
+        }
+    </style>
+    <style>
+        /* class selector style example*/
+        .classA {
+            background-color: black;
+        }
+
+        .class1 {
+            color: white;
+        }
+    </style>
+    <style>
+        /* attribute selector style example*/
+        input[type="text"] {
+            color: red;
+             background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <span>This is orange</span>
+    <p>This is second orange para </p>
+    <p class="classA class1">This is third  para that has class attribute</p>
+    <p class="classA">This is fourth  para that has class attribute</p>
+    <h3> This is blue and thick</h3>
+
+    <p id="para15">This is para having id para15 </p>
+    <form>
+        <input type="text">
+         <input type="checkbox" > checkbox 1 
+         <input type="radio"> radio1
+    </form>
+</body>
+
+</html>

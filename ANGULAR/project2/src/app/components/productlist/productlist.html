@@ -1,0 +1,28 @@
+<div style="border:solid 1px ORANGE">
+
+    <H2>PRODUCT LIST</H2>
+
+
+    <table border="1" *ngIf="products.length>0 ; else elseBlock">
+
+        <tr>
+            <th>ID </th>
+            <th>NAME </th>
+            <th>PRICE </th>
+            <th>PHOTO </th>
+
+        <tr *ngFor="let prod of products; index as i;">
+            <td>{{prod.id}}
+            <td> {{prod.name | uppercase}}
+            <td> {{prod.price | currency }}
+            <td> <img [src]="prod.imagePath" width="100" height="50" /></td>         
+
+        </tr>
+
+    </table>
+
+    <ng-template #elseBlock> No Products to Display </ng-template>
+
+    <br><br>
+
+</div>

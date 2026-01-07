@@ -1,0 +1,22 @@
+<div style="border:solid 1px blue">
+
+    <div class="product-name">{{name }}</div>
+    <p [style.color]="priceColor" [style.fontSize]="priceFontSize">{{price }}</p>
+    <!-- <p [class.highlightYellow]="highlightY" > {{description}} </p> -->
+    <p [class]="classHighlightr"> 
+        {{description}}
+        <button (click)="changeHightLightColor()">Change Hightlight Color of Desc</button>
+    </p>
+
+    <div>
+        <button (click)="onPriceEvent()"> CLICK TO GENERATE PRICE EVENT </button>
+    </div>
+    <br />
+
+    Description: <input type="text" [(ngModel)]="description" />
+    <br />
+    <button (click)="addToCart()"> ADD TO CART </button>
+
+
+</div>
+<BR>

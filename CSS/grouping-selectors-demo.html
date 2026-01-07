@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Internal CSS</title>
+    <style>
+        span,
+        h3,
+        #para15 {
+            color: blue;
+        }
+
+        /* child selector */
+        p a {
+            font-size: 30px
+        }
+
+         /* desendent selector */
+        p > a {
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <a href=""> Link 1</a>
+    <p><a href=""> Link 2</a></p>
+     <p><div><a href=""> Link  3 </a></div></p>
+
+    <span>This is orange</span>
+    <p>This is second orange para </p>
+    <p class="classA class1">This is third para that has class attribute</p>
+    <p class="classA">This is fourth para that has class attribute</p>
+    <h3> This is blue and thick</h3>
+
+    <p id="para15">This is para having id para15 </p>
+    <form>
+        <input type="text">
+        <input type="checkbox"> checkbox 1
+        <input type="radio"> radio1
+    </form>
+</body>
+
+</html>

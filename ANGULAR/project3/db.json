@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "id": 4804,
+      "name": "Sony laptop",
+      "price": "100000",
+      "description": "",
+      "inStock": true,
+      "imagePath": "IMAGES/sony.jpg",
+      "bidAmount": 100
+    },
+    {
+      "id": 8096,
+      "name": "HP Laptop",
+      "price": "20000",
+      "description": "",
+      "inStock": true,
+      "imagePath": "IMAGES/hp.jpg",
+      "bidAmount": 100
+    },
+    {
+      "id": 7046,
+      "name": "HP laptop 2",
+      "price": "20000",
+      "description": "",
+      "inStock": true,
+      "imagePath": "IMAGES/hp.jpg",
+      "bidAmount": 100
+    }
+  ]
+}

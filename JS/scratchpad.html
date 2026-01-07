@@ -1,0 +1,81 @@
+<script>
+
+    //console.log(pic); // undefined
+    //let pic;
+
+
+
+</script>
+
+
+<script>
+
+    let a = 10;
+    let b = 5;
+
+    let z = a / b;
+
+    console.log("z", z);
+
+    z = a / 0;
+
+    console.log("z", z);
+
+</script>
+
+
+<script>
+    let object1 = { city: "Bangalore" };
+
+    try {
+        object1.f1();
+    } catch (error) {
+        console.log(error);
+    }
+
+    console.log("object1.city is ", object1.city);
+
+</script>
+
+
+<script>
+    let a1 = 10; // global scope
+
+    function f5() {
+        let a2 = 10;  // local scope
+        console.log("a2", a2); // ok
+
+        {
+            let a3 = 10;  // block scope
+            console.log("a3", a3); // ok
+            console.log("a2", a2); // ok
+        };
+        console.log("a3", a3); // ERROR
+
+        console.log("a2", a2); // ok
+    }
+
+    f5();
+
+</script>
+
+<script>
+    var b1 = 10; // global scope
+
+    function f6() {
+        var b2 = 10;  // local scope
+        console.log("b2", b2); // ok
+
+        {
+            var b3 = 10;  // block scope
+            console.log("b3", b3); // ok
+            console.log("b2", b2); // ok
+        };
+        console.log("b3",b3); // OK!!
+
+        console.log("b2", b2); // ok
+    }
+
+    f6();
+
+</script>

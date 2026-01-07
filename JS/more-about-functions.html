@@ -1,0 +1,52 @@
+<script>
+
+    function f1(x, y) {
+
+        // do something with x and y.
+
+    }
+
+    f1(2, 5);
+
+</script>
+
+<script>
+    //CALLBACK FUNCTIONS DEMO
+    function g1(X, Y) {
+        console.log("INSIDE g1 function")
+        // do something with X and Y.
+        X();
+
+        // some more lines
+        Y();
+    }
+
+    function g2() {
+        console.log("INSIDE g2 function")
+    }
+
+    function g3() {
+        console.log("INSIDE g3 function")
+    }
+
+    g1(g2, g3);
+
+</script>
+
+<script>
+    // FUNCTIONS IN JS can also return functions
+
+    function h1(){
+        console.log("INSIDE h1 function");
+
+        let h2 = function(m,n){
+            console.log("INSIDE h2 function");
+        };
+
+        return h2;
+    };
+
+    let h3 = h1();
+    h3();
+
+</script>

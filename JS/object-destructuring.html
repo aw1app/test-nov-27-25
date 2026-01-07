@@ -1,0 +1,30 @@
+<script>
+    class Employee {
+        constructor(name, id, age, department) {
+            this.name = name;
+            this.id = id;
+            this.age = age;
+            this.department = department; age
+        }
+
+    };
+
+    let emp1 = new Employee("Ram", 175375, 25, "Security");
+
+
+    function greeting(name, age) {
+        console.log("Welcome " + name + " You are " + age + " old" );
+    };   
+
+    greeting(emp1.name, emp1.age);
+</script>
+
+<script>
+    // OBJECT DESTRUCTURING DEMO
+    function greetingRevised( {name, age} ) {
+        console.log("[REVISED] Welcome " + name + " You are " + age + " old" );
+    };
+
+    greetingRevised(emp1);    
+
+</script>

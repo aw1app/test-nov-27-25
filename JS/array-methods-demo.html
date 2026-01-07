@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+    // Splice method demo
+    const numbers = [1, 2, 3, 4, 5, 6];
+    console.log("numbers before spliceings plice(3, 2)", numbers);
+    numbers.splice(3, 2);
+    console.log("numbers", numbers);
+</script>
+
+<body>
+    <h2>The find() Method for const ages = [25, 19, 29, 44];</h2>
+    <p>Click "Result" to return the value of the array's first element that has a
+        value above this number:</p>
+
+    <p><input type="number" id="numberCheck" value="15"></p>
+
+    <button onclick="myFunction()">Result</button>
+
+    <p id="result"></p>
+
+    <script>
+        const ages = [25, 19, 29, 44];
+
+        let checkNumber = age => age > document.getElementById("numberCheck").value;
+
+        function myFunction() {
+            document.getElementById("result").innerHTML = ages.find(checkNumber);
+        }
+    </script>
+
+
+    <script>
+        // Demo filter
+        const amounts = [215, 109, 129, 144];
+
+        let filteredAmounts = amounts.filter(item => item % 2 == 0);
+        console.log(`amounts: ${amounts}, filteredAmounts: ${filteredAmounts}    `);
+
+    </script>
+
+
+    <script>
+        // Demo filter
+        const nums = [2, 5, 3, 7];
+
+        let myMapping = item => item * item;
+        let mappedNums =  nums.map( myMapping );
+        console.log(`nums: ${nums} \n mappedNums: ${mappedNums}    `);
+
+    </script>
+
+</body>
+
+</html>

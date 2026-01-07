@@ -1,0 +1,43 @@
+<script>
+
+    class Car {
+
+        constructor(name, model, price) {
+            this.name = name;
+            this.model = model;
+            this.price = price;
+        }
+
+        getCarInfo() {
+            return `Details of this car : NAME: ${this.name} , MODEL: ${this.model} ,  PRICE:${this.price}   `;
+        }
+
+    }
+
+    let car1 = new Car("Maruti", 2025, 500000);
+    let car2 = new Car("Toyota", 2024, 1500000);
+
+    //console.log(car1);
+    console.log(car1.getCarInfo());
+</script>
+
+<script>
+    // Task - 6 : Create a class to represent an Employee. Then create some 2 employees and print thier details.
+    class Employee {
+        constructor(name, id, department) {
+            this.name = name;
+            this.id = id;
+            this.department = department;
+        }
+        getEmployeeInfo() {
+            return `Details of this employee : NAME : ${this.name}, ID : ${this.id}, DEPARTMENT : ${this.department}`;
+        }
+    }
+    let emp1 = new Employee("Ram", 175375, "Security");
+    let emp2 = new Employee("John", 170293, "Networking");
+    console.log(emp1.getEmployeeInfo());
+
+     // Task - 7 : In the Employee class add a method to return the Department
+
+</script>
+

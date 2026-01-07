@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        //function definition
+        function f1(){
+            console.log("Hello Everyone!");
+        }
+
+        //invocation or execution of a function
+        f1();
+
+    </script>
+
+    <script>
+        //function that takes inputs
+        function f2(name){
+            console.log("Hello " + name + " !");
+        }
+
+        //invocation or execution of a function
+        f2("Rajesh");
+        f2("Padma");
+
+    </script>
+
+    <script>
+        //function that takes inputs and generates output that we can store
+        function f3(x,y){
+            let z = x+y;
+            return z;
+        }
+
+        //invocation or execution of a function
+       let a1 = f3(2,3); // a1 is now 5
+       console.log("a1=",a1);
+
+       let a2 = f3(12,7); // 19
+       console.log("a2=",a2);
+
+    </script>
+
+     <script>
+        //TASK-2: Create a function that will accept 'salary' and computes 15% tax on it and returns it.
+        function tax(salary){
+            return salary * 0.15;
+        }
+
+        let salary1 = 10000;
+        let a = tax(salary1);
+        console.log(`tax on salary of ${salary1} is ${a}`);
+
+        let salary2 = 20000;
+        a = tax(salary2);
+        console.log(`tax on salary of ${salary2} is ${a}`);
+     </script>
+
+</head>
+
+
+
+
+</html>

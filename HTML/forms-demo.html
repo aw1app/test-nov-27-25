@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<body>
+    <h2>FORMS DEMO</h2>
+
+    <form action="process_user_data.py" method="GET">
+
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" value="Rehmat"><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname" value="kaur"><br><br>
+        <label for="passwd">Password:</label>
+        <input type="password" id="passwd" name="passwd"><br><br>
+
+        <br>Gender :
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+
+        <br><br>Vehicles you own :
+        <select name="vehicles">
+            <option value="2w"> Two wheeler</option>
+            <option value="4w"> Four wheeler</option>
+            <option value="boat"> Boat</option>
+        </select>
+
+        <br><br>Hobbies :
+        <input type="checkbox" name="hobbies" value="Cricket"> Cricket
+        <input type="checkbox" name="hobbies" value="Tennis"> Table Tennis
+        <input type="checkbox" name="hobbies" value="Dancing"> Dancing
+        <input type="checkbox" name="hobbies" value="Singing"> Western Songs
+
+        <br><br>Bio:
+        <br><textarea rows="6" cols="60"></textarea>
+
+        <br><br>
+        <input type="submit" value="Submit">
+
+
+    </form>
+
+</body>
+
+</html>
