@@ -17,5 +17,8 @@ public class MethodsDemo {
 		return c ;
 		
 	}
+	
+	//TASK-1: write a method that will accept salary and will compute & return the 15% tax amount to be paid.
+	
 
 }
