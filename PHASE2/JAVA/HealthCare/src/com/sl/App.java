@@ -2,6 +2,7 @@ package com.sl;
 
 import com.sl.customers.Patient;
 import com.sl.staff.Doctor;
+import com.sl.staff.SpecialistDoctor;
 
 public class App {
 
@@ -31,7 +32,12 @@ public class App {
 		Patient patient2 = new Patient("Manohar",24, "High Fever");
 		
 		System.out.println("INFO of patient2 object " + patient2.info());
-		patient2.
+		
+		System.out.println("\n INHERITANCE DEMO\n");
+		SpecialistDoctor spDoctor1 = new SpecialistDoctor();
+		spDoctor1.name="Prakash";
+		spDoctor1.diagonse(); // diagonse method is inherited from superclass Doctor
+		spDoctor1.performSpecialDiagonis();//performSpecialDiagonis method is in SpecialistDoctor.
 
 	}
 
