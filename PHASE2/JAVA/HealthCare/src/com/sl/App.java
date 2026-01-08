@@ -39,6 +39,12 @@ public class App {
 		spDoctor1.diagonse(); // diagonse method is inherited from superclass Doctor
 		spDoctor1.performSpecialDiagonis();//performSpecialDiagonis method is in SpecialistDoctor.
 
+		
+		// We can also create Doctor and  assign to it's interface type like below
+		System.out.println("\n INTERFACE DEMO\n");
+		Consultant doctor2 = new Doctor();
+		doctor2.consult(patient2);
+		
 	}
 	
 	// TASK-2: Create a class OutPatient by subclassing Patient class

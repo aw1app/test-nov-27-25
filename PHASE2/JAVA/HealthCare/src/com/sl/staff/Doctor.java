@@ -1,6 +1,9 @@
 package com.sl.staff;
 
-public class Doctor {
+import com.sl.Consultant;
+import com.sl.customers.Patient;
+
+public class Doctor implements Consultant{
 	
 	public String name;
 	int age;
@@ -24,6 +27,17 @@ public class Doctor {
 	
 	public String info() {
 		return "DOCTOR: name:"+ this.name +", age:"+ this.age + ",qualification: "+ this.qualification;
+	}
+
+	@Override
+	public void consult(Patient patient) {
+		System.out.println("Doctor: INSIDE consult method to consult a patient " + patient.info());
+	}
+
+	@Override
+	public void presribe(Patient patient) {
+		System.out.println("Doctor: INSIDE presribe method to presribe a patient " + patient.info());
+		
 	}
 
 }
