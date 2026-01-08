@@ -1,5 +1,6 @@
 package com.sl;
 
+import com.sl.customers.Patient;
 import com.sl.staff.Doctor;
 
 public class App {
@@ -13,12 +14,23 @@ public class App {
 		doctor1.qualification="MBBS (London)";
 		
 		
-		System.out.println("INFO of doctor1 object" + doctor1.info());
+		System.out.println("INFO of doctor1 object " + doctor1.info());
 		
 		doctor1.performSurgery();
 		
 		//TASK-1: Create a Patient class inn this project just like we created Doctor class.
 		// Then create a Patient instance here and invoke some methods.
+		
+//		Patient patient1 = new Patient();
+//		patient1.name="Sundar";
+//		patient1.patientID=2206;
+//		
+//		System.out.println("INFO of patient1 object " + patient1.info());
+		
+		
+		Patient patient2 = new Patient("Manohar",24, "High Fever");
+		
+		System.out.println("INFO of patient2 object " + patient2.info());
 
 	}
 
