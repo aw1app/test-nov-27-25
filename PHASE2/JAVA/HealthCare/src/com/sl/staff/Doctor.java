@@ -11,8 +11,7 @@ public class Doctor {
 	// actions or methods
 	
 	public void performSurgery(){
-		System.out.println("Doctor: INSIDE performSurgery method ");
-		
+		System.out.println("Doctor: INSIDE performSurgery method ");		
 	}
 	
 	public void diagonse() {
