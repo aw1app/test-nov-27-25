@@ -19,7 +19,7 @@ class A {
 }
 
 class B  extends A{ 
-	// error because final method interited from super class cannot be overriden
+	// error because final method inherited from super class cannot be overriden
 //	void m1() {
 //	}
 }
