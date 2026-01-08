@@ -40,5 +40,7 @@ public class App {
 		spDoctor1.performSpecialDiagonis();//performSpecialDiagonis method is in SpecialistDoctor.
 
 	}
+	
+	// TASK-2: Create a class OutPatient by subclassing Patient class
 
 }
