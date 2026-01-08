@@ -31,6 +31,7 @@ public class App {
 		Patient patient2 = new Patient("Manohar",24, "High Fever");
 		
 		System.out.println("INFO of patient2 object " + patient2.info());
+		patient2.
 
 	}
 
