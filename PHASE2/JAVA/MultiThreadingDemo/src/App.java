@@ -16,6 +16,9 @@ public class App {
 		for(int i=0;i<100;i++) {
 			System.out.println("IN MAIN Thread :"+ i);
 		}
+		
+		//TASK-3: Create a thread called ConsumerThread and when started,
+		// it should print numbers 1 to 10.
 
 	}
 
