@@ -9,7 +9,11 @@ public class Consumer implements Runnable {
 	@Override
 	public void run() {
 		while (true) {
-			this.buffer.consume();
+			try {
+				this.buffer.consume();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 
 			try {
 				Thread.sleep(10); // sleep for 10 ms

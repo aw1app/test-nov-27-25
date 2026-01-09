@@ -18,7 +18,7 @@ public class SharedBuffer {
 
 	synchronized void consume() throws InterruptedException {
 		if (!queue.isEmpty()) {
-			int value = queue.remove();
+			int value = queue.poll();
 			System.out.println("Consumed: " + value);
 			notifyAll();
 		}else {

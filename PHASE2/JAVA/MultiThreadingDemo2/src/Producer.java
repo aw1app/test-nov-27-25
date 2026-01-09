@@ -10,7 +10,11 @@ public class Producer implements Runnable {
 	public void run(){
 		int val = 0;
 		while (true) {
-			this.buffer.produce(val++);
+			try {
+				this.buffer.produce(val++);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			
 			try{Thread.sleep(10);}catch(InterruptedException e) {};
 		}
