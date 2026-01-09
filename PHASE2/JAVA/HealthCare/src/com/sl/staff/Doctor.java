@@ -11,7 +11,13 @@ public class Doctor implements Consultant{
 	
 	public String qualification;
 	
+	boolean available=false;
+	
 	// actions or methods
+	
+	public boolean isAvailable() {
+		return available;
+	}
 	
 	public void performSurgery(){
 		System.out.println("Doctor: INSIDE performSurgery method ");		
