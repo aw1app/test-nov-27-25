@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Scanner;
 
 import com.sl.customers.Patient;
 
@@ -30,8 +31,20 @@ public class MapDemo {
 			System.out.println(key + ": " + pat.name);
 		}
 		
+		// usage of the map:
+		// we can implement search
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Search and Print Patient details whose ID is :");
+		int patID = scanner.nextInt();
+		Patient patSearched =  patientMap.get(patID);
 		
-
+		if (patSearched !=null) {
+			System.out.println("Found the Patient with ID" + patID);
+			System.out.println(patSearched.info());
+		}
+		
+		
+		scanner.close();
 	}
 
 }
