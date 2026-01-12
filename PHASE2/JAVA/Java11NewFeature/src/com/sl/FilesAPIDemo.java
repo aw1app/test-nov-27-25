@@ -29,12 +29,15 @@ public class FilesAPIDemo {
 		String pathOfOrdersTxt = "F:/Users/home/git/test-nov-27-25/PHASE2/JAVA/Java11NewFeature/src/order.txt";
 		Path path2 = Path.of(pathOfOrdersTxt);
 		try {
-			Files.writeString(path2, "hello\nhi",StandardOpenOption.CREATE);
+			Files.writeString(path2, "hello\nhi",StandardOpenOption.CREATE); // create the file if it did not exist
 		} catch (IOException e) {
 			System.out.println(e);
 		};
 		
 		// Task-3: Append "how are you?" in the next line to the file pathOfOrdersTxt
+		
+		// Tasks:
+		// Explore how to delete a file, copy files, create folders, list folders,...
 		
 	}
 
