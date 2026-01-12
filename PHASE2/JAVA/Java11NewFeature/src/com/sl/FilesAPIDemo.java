@@ -32,7 +32,9 @@ public class FilesAPIDemo {
 			Files.writeString(path2, "hello\nhi",StandardOpenOption.CREATE);
 		} catch (IOException e) {
 			System.out.println(e);
-		}
+		};
+		
+		// Task-3: Append "how are you?" in the next line to the file pathOfOrdersTxt
 		
 	}
 
