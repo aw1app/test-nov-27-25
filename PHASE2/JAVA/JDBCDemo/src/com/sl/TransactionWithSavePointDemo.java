@@ -63,12 +63,15 @@ public class TransactionWithSavePointDemo {
 						connection.rollback(savePoint1);
 						System.err.println("Rollback happened!");
 						connection.commit(); // don't forget to commit upto the SavePoint.
+						System.err.println("Committed successfully upto the savepoint!");
 					} catch (SQLException e1) {
 						e1.printStackTrace();
 					}
 				}
 
 				connection.close();
+				
+				//Task-4 Try rollback to savepoint 2. verify the results!
 
 	}
 
