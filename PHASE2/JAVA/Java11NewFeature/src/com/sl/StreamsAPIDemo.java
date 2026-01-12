@@ -10,6 +10,7 @@ public class StreamsAPIDemo {
 		List<String> fruits = new ArrayList<String>();
 		
 		fruits.add("Apple");
+		fruits.add("Orange");
 		fruits.add("Mango");
 		fruits.add("Gauva");
 		fruits.add("Pineapple");
@@ -25,6 +26,11 @@ public class StreamsAPIDemo {
 		//print them (first three)
 		System.out.println("\n first three fruits using .limit of Streams API");
 		fruitsFirstThree.stream().forEach(  frt -> System.out.println(frt)  );
+		
+		// filter those fruits that are having names lenght > 5
+		System.out.println("\n names of fruits LT 5 chars using .filter of Streams API");
+		List<String> fruitsNamesLengthLT5 = fruits.stream().filter(  frt ->  frt.length() <= 5  ).toList();
+		fruitsNamesLengthLT5.stream().forEach(  frt -> System.out.println(frt)  );
 		
 	}
 
