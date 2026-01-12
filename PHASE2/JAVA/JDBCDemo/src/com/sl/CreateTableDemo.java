@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class CreateTableDemo {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		
 		//1. Create the connection object
 		Connection connection = null;
@@ -30,19 +30,19 @@ public class CreateTableDemo {
 		}
 		
 		// 3. Execute the statement
-		String sqlCommand = "CREATE TABLE TABLE100(id int(8),email VARCHAR(80))";
+		String sqlCommand = "CREATE TABLE TABLE200(id int(8),email VARCHAR(80))";
 		try {
-			int count = stmt.executeUpdate(sqlCommand);
+			boolean hasResult = stmt.execute(sqlCommand); // execute method is used here for NON CRUD ops
 			System.out.println("Executed the Statement object successfully!");
-			
-			// Navigate the results (rows)
-			System.out.printf("Table created successfully",count);
 			
 			
 		} catch (SQLException e) {
 			System.out.println("Executing the Statement object failed!!" + e);
 		}
+		
+		//TASK-6: Alter the table name to TABLE500 and also add a new column mobile int 10
 
+		connection.close();	
 	}
 
 }
