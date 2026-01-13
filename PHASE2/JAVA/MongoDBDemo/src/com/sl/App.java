@@ -4,11 +4,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.bson.Document;
+import org.bson.conversions.Bson;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 
 public class App {
 	private static MongoClient mongoClient;
@@ -42,6 +44,10 @@ public class App {
 		System.out.println("\nAll Products:");
 		
 		productsCollection.find().forEach( doc -> System.out.println(doc.toJson()));
-
+		
+		// Find documents having specific criteria.
+		System.out.println("\nAll Products with price GTE 50000 :");
+		Bson priceGTE50000 = Filters.gte("price",50000.0f);
+		productsCollection.find(priceGTE50000).forEach( doc -> System.out.println(doc.toJson()));
 	}
 }
