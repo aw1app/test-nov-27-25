@@ -12,6 +12,8 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Updates;
+import com.mongodb.client.model.Updates;
 
 public class App {
 	private static MongoClient mongoClient;
@@ -49,18 +51,42 @@ public class App {
 //		
 		//MONGO-TASK-1: Write code insert 3 products. The 3rd product should have vendor details as well.
 		
-		Document vendor2 = new Document().append("name", "Samsung").append("countryOforigin", "India");
+//		Document vendor2 = new Document().append("name", "Samsung").append("countryOforigin", "India");
+//		
+//		Document newProductDoc10 = new Document()
+//				.append("id", 10)
+//				.append("name", "Dell AI PC 10")
+//				.append("price",77800.4f)
+//				.append("vendor", vendor2);
+//		insertProduct(newProductDoc10);
 		
-		Document newProductDoc10 = new Document()
-				.append("id", 10)
-				.append("name", "Dell AI PC 10")
-				.append("price",77800.4f)
-				.append("vendor", vendor2);
-		insertProduct(newProductDoc10);
+		// Demo update
+		updateProduct(3, 100000.0f); // update prod doc that has id=3 with price 100000.0f
+		
+		// update many product to price 99999 where current price is >= 50000
+		updateProducts(50000,99999.99f);
 		
 		System.out.println("END");
 	}
 
+	// update product given id feild value setting it's new price
+	private static void updateProduct(int id, float newPrice) {
+		Bson idFilter = Filters.eq("id", id);
+		Bson update = Updates.set("price",newPrice);
+		
+		productsCollection.updateOne(idFilter,update );
+		System.out.println("Successfully updated price");
+	}
+	
+	// update products given price GTE  setting it's new price
+		private static void updateProducts(float price, float newPrice) {
+			Bson idFilter = Filters.gte("price", price);
+			Bson update = Updates.set("price",newPrice);
+			
+			productsCollection.updateMany(idFilter,update );
+			System.out.println("Successfully updated price for many docs");
+		}
+	
 	private static void insertProduct(Document newProductDoc) {
 		productsCollection.insertOne(newProductDoc);
 	}
