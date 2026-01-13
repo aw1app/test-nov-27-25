@@ -66,6 +66,9 @@ public class App {
 		// update many product to price 99999 where current price is >= 50000
 		updateProducts(50000,99999.99f);
 		
+		
+		// TASK-2: demo delete by id.
+		
 		System.out.println("END");
 	}
 
