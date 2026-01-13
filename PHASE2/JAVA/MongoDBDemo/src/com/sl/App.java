@@ -35,20 +35,30 @@ public class App {
 //		insertProduct(newProductDoc);
 
 		// Insert many docs
-		Document newProductDoc1 = new Document()
-				.append("id", 4)
-				.append("name", "Dell AI PC 4")
-				.append("price",
-				77800.4f);
-
-		Document newProductDoc2 = new Document().append("id", 5).append("name", "Dell AI PC 5").append("price",
-				57800.5f);
-		
-		List<Document> newProductDocs = List.of(newProductDoc1,newProductDoc2 );
-		insertProducts(newProductDocs);
-		
+//		Document newProductDoc1 = new Document()
+//				.append("id", 4)
+//				.append("name", "Dell AI PC 4")
+//				.append("price",
+//				77800.4f);
+//
+//		Document newProductDoc2 = new Document().append("id", 5).append("name", "Dell AI PC 5").append("price",
+//				57800.5f);
+//		
+//		List<Document> newProductDocs = List.of(newProductDoc1,newProductDoc2 );
+//		insertProducts(newProductDocs);
+//		
 		//MONGO-TASK-1: Write code insert 3 products. The 3rd product should have vendor details as well.
-
+		
+		Document vendor2 = new Document().append("name", "Samsung").append("countryOforigin", "India");
+		
+		Document newProductDoc10 = new Document()
+				.append("id", 10)
+				.append("name", "Dell AI PC 10")
+				.append("price",77800.4f)
+				.append("vendor", vendor2);
+		insertProduct(newProductDoc10);
+		
+		System.out.println("END");
 	}
 
 	private static void insertProduct(Document newProductDoc) {
