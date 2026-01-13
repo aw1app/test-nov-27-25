@@ -51,6 +51,10 @@ public class RowSetDemo {
 				throw e;
 			}
 			System.out.println("Changes written to database");
+			
+			
+			// Insert a new row
+			insertNewProduct( rowSet, con);
 		}
 
 	}
@@ -78,7 +82,36 @@ public class RowSetDemo {
 				System.err.printf("Error reading row: %s%n", e.getMessage());
 			}
 		}
-
 	}
+	
+	 private static void insertNewProduct(CachedRowSet rowSet, Connection con ) throws SQLException {
+	        // Save current position
+	        int currentRow = rowSet.getRow();
+	        
+	        try {
+	            rowSet.moveToInsertRow();
+	            rowSet.updateNull("id"); // PK is auto incremented
+	            rowSet.updateString("name", "Keyboard");
+	            rowSet.updateFloat("price", 45.00f);
+	            rowSet.insertRow();
+	            rowSet.moveToCurrentRow();
+	            rowSet.acceptChanges(con); // sync to DB
+	            
+	            // Move back to previous position
+	            if (currentRow > 0) {
+	                rowSet.absolute(currentRow);
+	            } else {
+	                rowSet.beforeFirst();
+	            }
+	        } catch (SQLException e) {
+	            // If insert fails, ensure we restore position
+	            if (currentRow > 0) {
+	                rowSet.absolute(currentRow);
+	            } else {
+	                rowSet.beforeFirst();
+	            }
+	            throw new SQLException("Failed to insert new product: " + e.getMessage());
+	        }
+	    }
 
 }
