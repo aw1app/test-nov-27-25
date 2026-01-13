@@ -90,9 +90,11 @@ public class RowSetDemo {
 	        
 	        try {
 	            rowSet.moveToInsertRow();
+	            
 	            rowSet.updateNull("id"); // PK is auto incremented by DB
 	            rowSet.updateString("name", "Keyboard");
 	            rowSet.updateFloat("price", 45.00f);
+	            
 	            rowSet.insertRow();
 	            rowSet.moveToCurrentRow();
 	            rowSet.acceptChanges(con); // sync to DB
