@@ -61,10 +61,14 @@ public class App {
 //		insertProduct(newProductDoc10);
 		
 		// Demo update
-		updateProduct(3, 100000.0f); // update prod doc that has id=3 with price 100000.0f
+//		updateProduct(3, 100000.0f); // update prod doc that has id=3 with price 100000.0f
+//		
+//		// update many product to price 99999 where current price is >= 50000
+//		updateProducts(50000,99999.99f);
 		
-		// update many product to price 99999 where current price is >= 50000
-		updateProducts(50000,99999.99f);
+		Document newProductDoc11 = new Document()
+		.append("price",77800.4f);
+		insertProduct(newProductDoc11);		
 		
 		
 		// TASK-2: demo delete by id.
