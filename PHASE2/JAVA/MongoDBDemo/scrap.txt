@@ -1,0 +1,72 @@
+db.products.updateOne(
+{
+"_id": ObjectId("69705f1499464a594486e276")
+},
+{
+$set: {
+"name": "Dell GAMING PC 2",
+"price": 6000,
+"rating": 5
+}
+})
+
+
+db.products.insertOne(
+{
+name: 'Samsung Phone',
+price: 300,
+rating: 2,
+inStock: true,
+colors: [ 'red', 'blue', 'black' ],
+category: 'B',
+details: { weight: 10, size: 5 }
+}
+)
+
+db.products.insertOne(
+{
+name: 'HP PC 1',
+price: 30000,
+rating: 3,
+inStock: true,
+colors: [ 'red', 'black', 'yellow' ],
+category: 'B',
+details: { weight: 2, size: 5 }
+}
+)
+
+
+db.products.insertOne(
+{
+name: 'Nokia Phone',
+price: 305,
+rating: 1,
+inStock: true,
+colors: [ 'red', 'green', 'black' ],
+category: 'B',
+details: { weight: 1, size: 3 }
+}
+)
+
+db.products.find(
+
+{
+$and: [
+{ "details.weight":
+{ $lt: 2 } },
+{ "details.size": 5 }
+]
+
+}
+
+)
+
+
+
+
+// DELETE examples
+// Delete Nokia phone 
+db.products.deleteOne(
+{
+"_id": ObjectId("69706e9d99464a594486e278")
+})
