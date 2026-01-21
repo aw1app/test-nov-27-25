@@ -18,11 +18,11 @@ public class WelcomeServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		out.println("Hello");
-		out.println("My");
-		out.println("Name");
-		out.println("Is");
-		out.println("Ryan");
-		out.println("Thanks for reaching us !");
+		out.println("Today");
+		out.println("Wednesday");
+		out.println("Welcome");
+		out.println("to");
+		out.println("cup of coffee !");
 		out.println("Have a nice day :) ");
 
 		out.close();

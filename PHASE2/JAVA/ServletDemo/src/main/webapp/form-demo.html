@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+
+<h2>FORM DEMO for creating New product</h2>
+
+
+<form action="newProduct" method="post">
+
+	<!-- Text -->
+	Product Name: <input type="text" name="productName" required> <br>
+	<br>
+
+	<!-- Number -->
+	Price: <input type="number" name="price" step="0.01"> <br>
+	<br>
+
+	<!-- Email -->
+	Supplier Email: <input type="email" name="email"> <br>
+	<br>
+
+	<!-- Password -->
+	Admin Password: <input type="password" name="password"> <br>
+	<br>
+
+	<!-- Date -->
+	Manufacturing Date: <input type="date" name="mfgDate"> <br>
+	<br>
+
+	<!-- Radio -->
+	Category: <input type="radio" name="category" value="Electronics">
+	Electronics <input type="radio" name="category" value="Clothing">
+	Clothing <input type="radio" name="category" value="Grocery">
+	Grocery <br>
+	<br>
+
+	<!-- Checkbox -->
+	Available Features: <input type="checkbox" name="features"	value="Warranty"> Warranty 
+	<input type="checkbox" 		name="features" value="Returnable"> 	Returnable 
+	<input type="checkbox" name="features" value="FreeDelivery"> Free	Delivery <br>
+	<br>
+
+	<!-- Select -->
+	Brand: <select name="brand">
+		<option value="Apple">Apple</option>
+		<option value="Samsung">Samsung</option>
+		<option value="Sony">Sony</option>
+	</select> <br>
+	<br>
+
+	<!-- Textarea -->
+	Description: <br>
+	<textarea name="description" rows="4" cols="30"></textarea>
+	<br>
+	<br>
+
+	<!-- Hidden -->
+	<input type="hidden" name="source" value="HTML_FORM">
+
+
+	<!-- Submit -->
+	<input type="submit" value="Create Product">
+
+</form>
+
+
