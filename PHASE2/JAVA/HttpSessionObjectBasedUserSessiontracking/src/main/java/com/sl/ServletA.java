@@ -13,9 +13,7 @@ import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/servlet-A")
 public class ServletA extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-    
-	
+	private static final long serialVersionUID = 1L;	
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
@@ -50,6 +48,5 @@ public class ServletA extends HttpServlet {
 		out.close();
 	}
 
-	
-
 }
+//TASK-8: Enhance the HttpSession based project with per user per servlet visit count tracking functionality.

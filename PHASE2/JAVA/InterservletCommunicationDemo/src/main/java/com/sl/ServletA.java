@@ -1,0 +1,35 @@
+package com.sl;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/servlet-A")
+public class ServletA extends HttpServlet {
+	private static final long serialVersionUID = 1L;   
+	
+   
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();	
+		
+		out.append("<br> Inside SERVLET A. ");
+		
+		int age = Integer.parseInt(request.getParameter("age"));
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/register-vote");
+		if(age>18)
+			dispatcher.forward(request, response);
+		else
+			out.append("<br> You are not eligible to vote this time. ");
+
+		out.close();
+	}
+
+}
