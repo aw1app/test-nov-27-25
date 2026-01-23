@@ -1,1 +1,5 @@
 TASK-8: Enhance the HttpSession based project with per user per servlet visit count tracking functionality.
+
+//TASK-9: JDBC Servlet DB connectivity demo: Create a login form with username and password feilds. Implement
+// login functionality in a Servlet.
+// respond to the user to "LOGIN SUCCESS" or "LOGIN FAILED" message.
