@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+//TASK-7:  Create another servlet servletC that will also participate in session tracking
 
 @WebServlet("/servlet-A")
 public class ServletA extends HttpServlet {
