@@ -47,7 +47,7 @@ public class UpdateProduct extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		out.append("<br> INSIDE UPDATE Product");
+		out.append("<br> INSIDE UPDATE Product<br><br>");
 		int id = Integer.parseInt(request.getParameter("id"));
 		String name = request.getParameter("name");
 		float price = Float.parseFloat(request.getParameter("price"));
