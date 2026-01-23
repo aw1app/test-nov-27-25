@@ -12,22 +12,27 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/servlet-A")
 public class ServletA extends HttpServlet {
-	private static final long serialVersionUID = 1L;   
-	
-   
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();	
-		
-		out.append("<br> Inside SERVLET A. ");
-		
+		PrintWriter out = response.getWriter();
+
+		out.append("<br> Inside SERVLET A. START");
+
 		int age = Integer.parseInt(request.getParameter("age"));
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/register-vote");
-		if(age>18)
+		if (age > 18) {
 			dispatcher.forward(request, response);
-		else
-			out.append("<br> You are not eligible to vote this time. ");
+		} else {
+			dispatcher = request.getRequestDispatcher("/not-eligible-to-vote");
+			dispatcher.include(request, response);
+		}
+		;
+
+		out.append("<br> Inside SERVLET A. END");
 
 		out.close();
 	}
