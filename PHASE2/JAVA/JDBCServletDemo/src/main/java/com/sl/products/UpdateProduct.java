@@ -15,8 +15,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/create-product")
-public class CreateProduct extends HttpServlet {
+@WebServlet("/update-product")
+public class UpdateProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	ServletContext context;
@@ -47,25 +47,27 @@ public class CreateProduct extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		out.append("<br> INSIDE Create Product");
+		out.append("<br> INSIDE UPDATE Product");
+		int id = Integer.parseInt(request.getParameter("id"));
 		String name = request.getParameter("name");
 		float price = Float.parseFloat(request.getParameter("price"));
 
 		PreparedStatement preparedStmt = null;
 		try {
-			String sqlCommand = "INSERT INTO products(name,price) values(?,?)";
+			String sqlCommand = "UPDATE products  SET name=?, price=? WHERE id=?";
 			preparedStmt = connection.prepareStatement(sqlCommand);
 			
 			preparedStmt.clearParameters();
 			preparedStmt.setString(1, name);
 			preparedStmt.setFloat(2, price);
+			preparedStmt.setInt(3, id);
 			
 			int rowcount = preparedStmt.executeUpdate();
 			System.out.println("no of  rows updated "+rowcount);
-			out.printf("Product Inserted successfully. <br>");
+			out.printf("Product updated successfully. <br>");
 			
 		} catch (SQLException e) {
-			System.out.println("INSERT product  failed " + e);
+			System.out.println("UPDATE product  failed " + e);
 		};
 		
 		out.printf("<a href=\"index.html\" >Home</a><br>");
