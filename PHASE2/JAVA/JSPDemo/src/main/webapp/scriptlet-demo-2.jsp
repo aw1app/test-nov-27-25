@@ -32,3 +32,7 @@ out.println("Today is " + today);
 <li> i= <%=i %>
 
 <% } %>
+
+<!-- TASK-1 :
+Create an array of fruit names and display them in a for loop.
+-->
