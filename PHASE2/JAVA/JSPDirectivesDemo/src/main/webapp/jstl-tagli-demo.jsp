@@ -39,6 +39,15 @@ Marks: <c:out value="${marks}" /><br>
 	<c:otherwise>FAIL</c:otherwise>
 </c:choose>
 
+
+<hr> <p> splitting a string in to tokens </p>
+<c:forTokens items="Apple,Mango,Banana,Orange"
+             delims=","
+             var="fruit">
+    ${fruit} <br>
+</c:forTokens>
+
+
 <hr> <p> handling exceptions </p>
 <c:catch var="ex">
 ${"x1" / 0}
