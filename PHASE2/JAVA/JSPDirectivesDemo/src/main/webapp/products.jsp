@@ -6,6 +6,8 @@
 <!DOCTYPE html>
 <html>
 
+<%@ include file="header.jsp" %>
+
 <h2>This page adds 2 products to the session object that can retrived in any other jsp that session object</h2>
 <%!
 List<Product> products = new ArrayList<Product>();
@@ -18,5 +20,6 @@ products.add(new Product("sweater",1900.99f));
 session.setAttribute("cart", products);
 %>
 
-
+<hr>
+<%@ include file="footer.jsp" %>
 </html>
