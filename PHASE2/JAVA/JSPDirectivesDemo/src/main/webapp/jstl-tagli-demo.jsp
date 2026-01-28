@@ -25,3 +25,29 @@ pageContext.setAttribute("fruitNames", fruitNames);
 
 
 <!-- TASK-5: Create a product object and use  jstl to print it's name and price-->
+
+<hr> <p> switch demo </p>
+<%
+    int marks = 82;
+pageContext.setAttribute("marks", marks);
+%>
+Marks: <c:out value="${marks}" /><br>
+<c:choose>
+	<c:when test="${marks>60 }">First class marks</c:when>
+	<c:when test="${marks>50 }">Seconds class marks</c:when>
+	<c:when test="${marks>40 }">Third class marks</c:when>
+	<c:otherwise>FAIL</c:otherwise>
+</c:choose>
+
+<hr> <p> handling exceptions </p>
+<c:catch var="ex">
+${"x1" / 0}
+</c:catch>
+
+<c:if test="${ex != null}">
+    Error Occurred: ${ex.message}
+</c:if>
+
+<br>FOOTER TEXT
+
+<br>
