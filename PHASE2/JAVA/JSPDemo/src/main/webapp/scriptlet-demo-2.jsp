@@ -3,8 +3,6 @@
 <!DOCTYPE html>
 <h1> Welcome to Amazon.com </h1>
 
-
-
 <% 
 java.util.Date today = new java.util.Date();
 
@@ -34,5 +32,5 @@ out.println("Today is " + today);
 <% } %>
 
 <!-- TASK-1 :
-Create an array of fruit names and display them in a for loop.
+Declare an array of fruit names and display them in a for loop.
 -->
