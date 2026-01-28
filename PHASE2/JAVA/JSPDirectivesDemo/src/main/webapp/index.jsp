@@ -16,4 +16,8 @@ Date today = new Date();
 
 ${today}
 
+<br><br><hr>
+
+<a href="products.jsp"> Products </a>  |  
+<a href="cart.jsp"> Cart </a>
 </html>
