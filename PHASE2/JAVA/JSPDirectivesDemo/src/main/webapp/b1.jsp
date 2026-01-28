@@ -11,3 +11,7 @@ session.setAttribute("x", 100);
 %>
 
 </html>
+
+<!-- TASK-3: Create an class Product with name and price. 
+In one JSP (products.jsp)  create some 2 products and add them in session object as "cart". 
+Then another JSP checkout.jsp display the products for billing -->
