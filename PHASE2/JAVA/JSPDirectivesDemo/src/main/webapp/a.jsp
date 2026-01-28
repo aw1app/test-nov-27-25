@@ -10,3 +10,5 @@ errorPage="e.jsp"
 
 
 </html>
+
+<!-- TASK-2: Add some code above that would throw ArrayIndexOutOfBoundException and see what happens -->
