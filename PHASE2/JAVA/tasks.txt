@@ -3,3 +3,6 @@ TASK-8: Enhance the HttpSession based project with per user per servlet visit co
 //TASK-9: JDBC Servlet DB connectivity demo: Create a login form with username and password feilds. Implement
 // login functionality in a Servlet.
 // respond to the user to "LOGIN SUCCESS" or "LOGIN FAILED" message.
+
+
+TASK-10 : Add a new-product.html and the corresponding JSP to add that product in the session object's "products" attribute. This  session object's "products" attr should be a Collection (List<String>) containing names of products added.
