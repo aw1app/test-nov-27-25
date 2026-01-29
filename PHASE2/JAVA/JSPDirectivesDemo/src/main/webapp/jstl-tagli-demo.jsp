@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
+<!-- JSTL Tablig -->
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 
 <hr> <p> Creating variables and printing </p>
