@@ -14,3 +14,8 @@
 <my:product name="Mouse" price="1000"/>
 
 </html>
+
+
+<!-- TASK-6: Enhance this taglib so that the name appears in bold and also
+it should accept one more attribute "category" 
+-->
