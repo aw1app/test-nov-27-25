@@ -3,7 +3,7 @@
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
 <%@ taglib uri="jakarta.tags.sql" prefix="sql"%>
 <!DOCTYPE html>
-
+<jsp:include page="header.jsp" ></jsp:include>
 
 <sql:setDataSource var="estore" driver="com.mysql.cj.jdbc.Driver"
 	url="jdbc:mysql://localhost:3306/cis_estore" user="root"
