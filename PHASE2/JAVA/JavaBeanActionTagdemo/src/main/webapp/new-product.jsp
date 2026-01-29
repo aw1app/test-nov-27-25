@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<jsp:useBean id="product1" class="com.sl.Product" scope="page" />
+<jsp:useBean id="product1" class="com.sl.Product" scope="session" />
 
 <!-- 
 <jsp:setProperty property="name" name="product1" param="product_name"/>
