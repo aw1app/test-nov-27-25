@@ -6,3 +6,6 @@ TASK-8: Enhance the HttpSession based project with per user per servlet visit co
 
 
 TASK-10 : Add a new-product.html and the corresponding JSP to add that product in the session object's "products" attribute. This  session object's "products" attr should be a Collection (List<String>) containing names of products added.
+
+
+TASK-11 : update the jdbc code in the jsp to show only the top 10 products
