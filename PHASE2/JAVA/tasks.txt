@@ -9,3 +9,5 @@ TASK-10 : Add a new-product.html and the corresponding JSP to add that product i
 
 
 TASK-11 : update the jdbc code in the jsp to show only the top 10 products
+
+TASK-12 : update the jstl sql tag code in the jsp to show only name and price in the table
