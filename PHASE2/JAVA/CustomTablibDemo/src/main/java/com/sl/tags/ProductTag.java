@@ -25,7 +25,7 @@ public class ProductTag extends SimpleTagSupport {
 	@Override
 	public void doTag() throws JspException, IOException {
 		JspWriter out = getJspContext().getOut();
-		out.print("Product Name: <span style='color:red'>" + name + " </span> Price: " + price);
+		out.print("Product Name: <span style='color:red;font-weight:bold;'>" + name + " </span> Price: " + price);
 	}
 
 }
