@@ -6,7 +6,9 @@
 <!-- Header -->
 <div>
 	<span style="font-size: 36px">Welcome to E Store</span> <span
-		style="text-align: right"> <a href="products.jsp"> Products </a>
+		style="text-align: right"> 
+		<a href="products.jsp"> Products </a>
+		<a href="new-product.html"> Add Product </a>
 	 
 	 <!-- User Greeting + Login link -->| 
 	 <c:choose>
