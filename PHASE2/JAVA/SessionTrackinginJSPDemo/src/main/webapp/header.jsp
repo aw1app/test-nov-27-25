@@ -7,13 +7,14 @@
 <div>
 	<span style="font-size: 36px">Welcome to E Store</span> <span
 		style="text-align: right"> 
-		<a href="products.jsp"> Products </a>
-		<a href="new-product.html"> Add Product </a>
+		<a href="products.jsp"> Products </a>  |  
+		<a href="new-product.html"> Add Product </a>  |  
 	 
 	 <!-- User Greeting + Login link -->| 
 	 <c:choose>
 			<c:when test="${not empty sessionScope.username}">
-				<span style="font-size: 16px;"> Hello ${sessionScope.username} </span>
+				<span style="font-size: 16px;"> Hello ${sessionScope.username} </span>   |   
+				<a href="logout.jsp"> Logout </a>
 			</c:when>
 			<c:otherwise>
 				<span style="font-size: 16px;"> Hello User </span>  |  
