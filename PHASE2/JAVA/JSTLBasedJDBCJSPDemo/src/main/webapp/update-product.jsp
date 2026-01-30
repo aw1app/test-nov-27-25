@@ -10,10 +10,10 @@
 	password="rootroot" />
 
 <sql:update dataSource="${estore}" var="count"> 
-DELETE FROM products where id=<%=request.getParameter("id") %>
+UPDATE products SET name='<%=request.getParameter("name") %>',price=<%=request.getParameter("price") %> WHERE id=<%=request.getParameter("id") %>
 </sql:update>
 
-<!-- <c:out value="Successfully deleted  ${count} product(s) with id=${param.id}" > </c:out>  -->
+<!-- <c:out value="Successfully updated  ${count} product(s) with id=${param.id}" > </c:out>  -->
 
 <c:redirect url="list-products.jsp"></c:redirect>
 
