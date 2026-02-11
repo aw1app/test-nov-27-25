@@ -4,7 +4,7 @@ public class Calculator {
 	
 	long add(int a, int b) {
 		
-		return a+b;
+		return (long) (a + b);
 		
 		//throw new RuntimeException("Method not implemented");
 	}
