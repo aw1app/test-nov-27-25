@@ -11,12 +11,14 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class AssertionsDemo {
 	
 	@Test
 	void myTest() {
+		System.out.println("INSIDE myTest");
 		
 		String str = null;
 		String str2 = "some value";
@@ -47,9 +49,15 @@ class AssertionsDemo {
 		assertNotEquals(5, 6);
 		
 		// assertThrows(RuntimeException.class, () -> new Calculator()); // false
-		assertThrows(RuntimeException.class, () -> new Calculator().multiply(2, 3)); 
+		assertThrows(RuntimeException.class, () -> { new Calculator().multiply(2, 3); } ); 
 	}
 	
+	
+	@Test
+	@Disabled
+	void test2() {
+		System.out.println("INSIDE test2");
+	}
 	
 	
 }
