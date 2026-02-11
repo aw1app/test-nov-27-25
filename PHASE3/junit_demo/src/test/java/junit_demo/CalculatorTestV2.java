@@ -18,12 +18,15 @@ class CalculatorTestV2 {
 	static void myBeforeAll() {
 		System.out.println(" INSIDE myBeforeAll");
 		// add statements that should be executed before launching any test case in this class
+		// like connecting to DB
+		
 	}
 	
 	@AfterAll
 	static void myAfterAll() {
 		System.out.println(" INSIDE myAfterAll");
 		// add statements that should be executed after running all test cases in this class
+		// like release the database connection DB
 	}
 	
 	@BeforeEach
