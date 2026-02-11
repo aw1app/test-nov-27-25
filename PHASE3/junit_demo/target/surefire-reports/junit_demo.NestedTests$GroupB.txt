@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: junit_demo.NestedTests$GroupB
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.297 s -- in junit_demo.NestedTests$GroupB

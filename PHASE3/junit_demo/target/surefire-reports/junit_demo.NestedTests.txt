@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: junit_demo.NestedTests
+-------------------------------------------------------------------------------
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.410 s -- in junit_demo.NestedTests
