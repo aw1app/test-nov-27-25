@@ -1,14 +1,46 @@
 package junit_demo;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class CalculatorTest {
-
+/* This test  class is an improvement over the previous version. 
+ *  Here we will use the before/after lifecycle methods
+ *  */
+class CalculatorTestV2 {
+	Calculator calc = null;
+	
+	@BeforeAll
+	static void myBeforeAll() {
+		System.out.println(" INSIDE myBeforeAll");
+		// add statements that should be executed before launching any test case in this class
+	}
+	
+	@AfterAll
+	static void myAfterAll() {
+		System.out.println(" INSIDE myAfterAll");
+		// add statements that should be executed after running all test cases in this class
+	}
+	
+	@BeforeEach
+	void myBeforeEach() {
+		System.out.println(" INSIDE myBeforeEach");
+		calc = new Calculator();
+	}
+	
+	@AfterEach
+	void myAfterEach() {
+		System.out.println(" INSIDE myAfterEach");
+		calc = null;
+	}
+	
 	@Test
 	void testAdd1() {
-		Calculator calc = new Calculator();
+		System.out.println(" INSIDE testAdd1");
 		int a = 4;
 		int b = 5;
 		int expectedResult = 9;
@@ -21,7 +53,7 @@ class CalculatorTest {
 
 	@Test
 	void testAdd2() {
-		Calculator calc = new Calculator();
+		System.out.println(" INSIDE testAdd2");
 		int a = 4;
 		int b = 0;
 		int expectedResult = 4;
@@ -34,7 +66,7 @@ class CalculatorTest {
 	
 	@Test
 	void testAdd3() {
-		Calculator calc = new Calculator();
+		System.out.println(" INSIDE testAdd3");
 		int a = 0;
 		int b = 0;
 		int expectedResult = 0;
@@ -47,7 +79,7 @@ class CalculatorTest {
 
 	@Test
 	void testAdd4() {
-		Calculator calc = new Calculator();
+		System.out.println(" INSIDE testAdd4");
 		int a = 4;
 		int b = -1;
 		int expectedResult = 3;
@@ -60,7 +92,7 @@ class CalculatorTest {
 	
 	@Test
 	void testAdd5() {
-		Calculator calc = new Calculator();
+		System.out.println(" INSIDE testAdd5");
 		int a = -4;
 		int b = -1;
 		long expectedResult = -5;
@@ -74,7 +106,7 @@ class CalculatorTest {
 	
 	@Test
 	void testAdd6() {
-		Calculator calc = new Calculator();
+		System.out.println(" INSIDE testAdd6");
 		int a = 1000000000;
 		int b = 2000000000;
 		long expectedResult = 3000000000L; // exceeds int range, but within long range
