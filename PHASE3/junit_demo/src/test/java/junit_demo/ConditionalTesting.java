@@ -69,6 +69,11 @@ class ConditionalTesting {
 		assertEquals(7, cal.add(x, y));
 	}
 	
+	// Test the below test case by first creating a env variable x1 on a terminal
+	// On Windows: SET x1=123
+	// On Mac/Linux: export x1=123
+	// mvn clean -Dtest=ConditionalTest test
+	
 	@Test
 	@EnabledIfEnvironmentVariable(named = "x1", matches = "\\d{3}")
 	public void testAddEnvVariable() {
