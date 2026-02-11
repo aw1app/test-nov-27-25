@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="junit_demo.ConditionalTesting" time="0.397" tests="6" errors="0" skipped="5" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="junit_demo.ConditionalTesting" time="0.252" tests="6" errors="0" skipped="5" failures="0">
   <properties>
     <property name="java.specification.version" value="24"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-24\bin"/>
-    <property name="sun.java.command" value="C:\Users\home\AppData\Local\Temp\surefire13622838898935693713\surefirebooter-20260211150116128_3.jar C:\Users\home\AppData\Local\Temp\surefire13622838898935693713 2026-02-11T15-01-15_738-jvmRun1 surefire-20260211150116128_1tmp surefire_0-20260211150116128_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\home\AppData\Local\Temp\surefire8452500365072531047\surefirebooter-20260211150645166_3.jar C:\Users\home\AppData\Local\Temp\surefire8452500365072531047 2026-02-11T15-06-44_593-jvmRun1 surefire-20260211150645166_1tmp surefire_0-20260211150645166_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="ConditionalTesting"/>
     <property name="surefire.test.class.path" value="F:\Users\home\git\test-nov-27-25\PHASE3\junit_demo\target\test-classes;F:\Users\home\git\test-nov-27-25\PHASE3\junit_demo\target\classes;C:\Users\home\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.0.2\junit-jupiter-engine-6.0.2.jar;C:\Users\home\.m2\repository\org\junit\platform\junit-platform-engine\6.0.2\junit-platform-engine-6.0.2.jar;C:\Users\home\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\home\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\home\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.0.2\junit-jupiter-api-6.0.2.jar;C:\Users\home\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\home\.m2\repository\org\junit\platform\junit-platform-commons\6.0.2\junit-platform-commons-6.0.2.jar;C:\Users\home\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.0.2\junit-jupiter-params-6.0.2.jar;"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\home\AppData\Local\Temp\surefire13622838898935693713\surefirebooter-20260211150116128_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\home\AppData\Local\Temp\surefire8452500365072531047\surefirebooter-20260211150645166_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="24.0.2+12-54"/>
@@ -65,7 +65,7 @@
   <testcase name="testOnMac" classname="junit_demo.ConditionalTesting" time="0.0">
     <skipped message="Disabled on operating system: Windows 10"/>
   </testcase>
-  <testcase name="testOnWin" classname="junit_demo.ConditionalTesting" time="0.107">
+  <testcase name="testOnWin" classname="junit_demo.ConditionalTesting" time="0.072">
     <system-out><![CDATA[INSIDE testOnWin
 ]]></system-out>
   </testcase>
