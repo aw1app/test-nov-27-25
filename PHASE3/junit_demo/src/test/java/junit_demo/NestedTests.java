@@ -25,6 +25,7 @@ class NestedTests {
 
 	}
 
+	// mvn -Dtest=NestedTests$GroupB test
 	@Nested
 	class GroupB {
 
