@@ -17,6 +17,10 @@ public class Main {
 		
 		IProduct t2 = (IProduct) context.getBean("t2") ; // t2 is a bean that uses SDI 
 		System.out.println(t2.getProductInfo());
+		
+		// access the beans without type casting
+		IProduct t3 = context.getBean("t2", IProduct.class) ;
+		System.out.println(t3.getProductInfo());
 
 	}
 
