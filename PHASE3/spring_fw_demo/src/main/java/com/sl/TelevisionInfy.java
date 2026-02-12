@@ -5,7 +5,8 @@ public class TelevisionInfy implements IProduct{
 	String name;
 	float price;
 	
-	
+	public TelevisionInfy() {
+	}
 
 	public TelevisionInfy(String name, float price) {
 		super();
@@ -14,8 +15,24 @@ public class TelevisionInfy implements IProduct{
 	}
 
 	@Override
-	public float getPrice() {		
+	public float getPrice() {
 		return price;
+	}
+
+	@Override
+	public String getName() {
+		return this.name;
+	}
+
+	@Override
+	public void setPrice(float price) {
+		this.price = price;
+
+	}
+
+	@Override
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override

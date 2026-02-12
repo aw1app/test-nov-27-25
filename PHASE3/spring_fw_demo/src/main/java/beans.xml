@@ -8,6 +8,12 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
 		<constructor-arg name="name" value="Phillips" />
 		<constructor-arg name="price" value="12000.99f" />
 	</bean>
+	
+	<!-- Bean definition for IProduct using constructor -->
+	<bean id="t2" class="com.sl.TelevisionInfy">
+	<property name="name" value="Sony" />
+	<property name="price" value="20000.5f" />
+	</bean>
 
 
 </beans>
