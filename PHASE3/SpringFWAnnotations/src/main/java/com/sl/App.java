@@ -1,5 +1,8 @@
 package com.sl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App {
@@ -22,11 +25,11 @@ public class App {
 		
 		
 		// Ask for IProduct
-		System.out.println("Ask for IProduct object. If many bean methods return IProduct object then it will choose @Primary one");
+		System.out.println("--Ask for IProduct object. \n If many bean methods return IProduct object \n then it will choose @Primary one--");
 		IProduct iproduct = context.getBean(IProduct.class);
 		System.out.println(iproduct.getProductInfo());
 		
-
+		
 	}
 
 }
