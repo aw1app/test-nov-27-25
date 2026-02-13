@@ -10,12 +10,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @EnableAspectJAutoProxy
 public class App {
 
-    private final Account account;
-
-    App(Account account) {
-        this.account = account;
-    }
-
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(App.class);
 		Account acct1 = context.getBean(Account.class);
