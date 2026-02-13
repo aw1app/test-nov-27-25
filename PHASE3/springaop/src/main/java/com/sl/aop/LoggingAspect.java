@@ -4,6 +4,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -58,5 +59,12 @@ public class LoggingAspect {
 		System.out.println(" (LOG) m5 request to  withdraw amount = " + amt);
 		if(amt>1000)
 		System.out.println(" (LOG) m5 completed request to  withdraw High Amount > 1000. Balance now = " + result);
+	}
+	
+	
+	//After an exception is throw case
+	@AfterThrowing(pointcut = "execution(* com.sl.FixedDeposit.breakFD(..))", throwing = "ex")
+	public void m6(Exception ex ) {
+		System.out.println(" (LOG) m6 exception was thrown with a message " + ex.getMessage() );
 	}
 }

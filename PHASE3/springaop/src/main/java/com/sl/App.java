@@ -36,12 +36,23 @@ public class App {
 		
 		
 		// FixedDeposit account
-		System.out.println("\n\n FixedDeposit account fd1 ");
+		System.out.println("\n\n FixedDeposit account fd1 break FD first time");
 		FixedDeposit fd1 = context.getBean(FixedDeposit.class);
 		System.out.println("fd1.isBroken = "+fd1.isBroken());
-		fd1.breakFD();
+		try {
+			fd1.breakFD();
+		} catch (Exception e) {
+		}
 		System.out.println("fd1.isBroken = "+fd1.isBroken());
 		
+		System.out.println("\n\n FixedDeposit account fd1 break FD second time");
+		try {
+			fd1.breakFD();
+		} catch (Exception e) {
+		}
+		
+		
+		System.out.println("END");
 
 	}
 

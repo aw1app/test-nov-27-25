@@ -25,9 +25,12 @@ public class FixedDeposit {
 	}
 
 	// Business methods
-	public void breakFD() {
+	public void breakFD() throws Exception {
 		if (!isBroken())
 			setBroken(true);
+		else
+			throw new Exception("FD is already broken!!");
+		
 		
 		try {
 			Thread.sleep(100); // 100 ms
