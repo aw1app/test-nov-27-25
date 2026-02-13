@@ -6,3 +6,6 @@ SPRING AOP
 
 SPRING-AOP-1: 
 Write another class FixedDepositAccount and implement an After advice for one of it's method say breakFD( ).
+
+SPRING-AOP-2:  Demonstrate that we can have many advices (interceptors) for the same pattern match.
+Implement another After advice for FixedDeposit class's breakFD( ).
