@@ -1,6 +1,8 @@
 package com.sl.aop;
 
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -30,7 +32,16 @@ public class LoggingAspect {
 	public void m3() {
 		//System.out.println(" (LOG) m1 this is an Before type INTERCEPTOR/ADVICE ");
 		System.out.println(" (LOG) completed request to  withdrawal amount ");	
-
 	}
-
+	
+	//Around advice
+	@Around("execution(* com.sl.FixedDeposit.breakFD(..))")
+	public void m4(ProceedingJoinPoint pjp) throws Throwable {
+		//System.out.println(" (LOG) m4 this is an Around type INTERCEPTOR/ADVICE ");
+		System.out.println(" (LOG) BEFORE break FD called.");	
+		
+		pjp.proceed();
+		
+		System.out.println(" (LOG) AFTER break FD called.");	
+	}
 }

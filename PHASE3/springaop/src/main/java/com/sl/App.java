@@ -10,6 +10,12 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @EnableAspectJAutoProxy
 public class App {
 
+    private final Account account;
+
+    App(Account account) {
+        this.account = account;
+    }
+
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(App.class);
 		Account acct1 = context.getBean(Account.class);
@@ -33,6 +39,15 @@ public class App {
 		acct1.withdraw(-20.0f);
 		
 		System.out.printf("\n Balance for account id %d : %s \n", acct1.getId(), acct1.getBalance());
+		
+		
+		// FixedDeposit account
+		System.out.println("\n\n FixedDeposit account fd1 ");
+		FixedDeposit fd1 = context.getBean(FixedDeposit.class);
+		System.out.println("fd1.isBroken = "+fd1.isBroken());
+		fd1.breakFD();
+		System.out.println("fd1.isBroken = "+fd1.isBroken());
+		
 
 	}
 
