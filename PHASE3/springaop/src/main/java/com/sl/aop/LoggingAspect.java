@@ -1,5 +1,6 @@
 package com.sl.aop;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -52,8 +53,10 @@ public class LoggingAspect {
 	}
 
 	// @AfterReturning advice
-	@AfterReturning(pointcut = "execution(* com.sl.Account.withdraw(..))", returning = "result")
-	public void m5(float result) {
-		System.out.println(" (LOG) completed request to  withdraw. Amount withdrawn = " + result);
+	@AfterReturning(pointcut = "execution(* com.sl.Account.withdraw(..)) && args(amt)", returning = "result")
+	public void m5(JoinPoint jp, float amt, float result) {
+		System.out.println(" (LOG) m5 request to  withdraw amount = " + amt);
+		if(amt>1000)
+		System.out.println(" (LOG) m5 completed request to  withdraw High Amount > 1000. Balance now = " + result);
 	}
 }
