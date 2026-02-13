@@ -9,3 +9,5 @@ Write another class FixedDepositAccount and implement an After advice for one of
 
 SPRING-AOP-2:  Demonstrate that we can have many advices (interceptors) for the same pattern match.
 Implement another After advice for FixedDeposit class's breakFD( ).
+
+SPRING-AOP-3:  Add an @AfterReturning advice for logging the deposit amount
