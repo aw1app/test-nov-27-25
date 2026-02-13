@@ -1,5 +1,6 @@
 package com.sl.aop;
 
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -12,7 +13,7 @@ public class LoggingAspect {
 	public void m1() {
 
 		//System.out.println(" (LOG) m1 this is an Before type INTERCEPTOR/ADVICE ");
-		System.out.println(" (LOG) m1 got a request to deposit amount ");		
+		System.out.println("(LOG) m1 got a request to deposit amount ");		
 
 	}
 	
@@ -21,6 +22,14 @@ public class LoggingAspect {
 
 		//System.out.println(" (LOG) m1 this is an Before type INTERCEPTOR/ADVICE ");
 		System.out.println(" (LOG) got a request to  withdrawal amount ");		
+
+	}
+	
+	// After advice
+	@After("execution(* com.sl.Account.withdraw(..))")
+	public void m3() {
+		//System.out.println(" (LOG) m1 this is an Before type INTERCEPTOR/ADVICE ");
+		System.out.println(" (LOG) completed request to  withdrawal amount ");	
 
 	}
 

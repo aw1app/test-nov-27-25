@@ -19,20 +19,20 @@ public class App {
 
 		acct1.deposit(1000.0f);
 
-		System.out.printf("\n Balance for account id %d : %s ", acct1.getId(), acct1.getBalance());
+		System.out.printf("\n Balance for account id %d : %s \n", acct1.getId(), acct1.getBalance());
 
 		acct1.deposit(2500.0f);
 		
 
-		System.out.printf("\n Balance for account id %d : %s ", acct1.getId(), acct1.getBalance());
+		System.out.printf("\n Balance for account id %d : %s \n", acct1.getId(), acct1.getBalance());
 		
 		acct1.withdraw(1500.0f);
 	
-		System.out.printf("\n Balance for account id %d : %s ", acct1.getId(), acct1.getBalance());
+		System.out.printf("\n Balance for account id %d : %s \n", acct1.getId(), acct1.getBalance());
 		
 		acct1.withdraw(-20.0f);
 		
-		System.out.printf("\n Balance for account id %d : %s ", acct1.getId(), acct1.getBalance());
+		System.out.printf("\n Balance for account id %d : %s \n", acct1.getId(), acct1.getBalance());
 
 	}
 
