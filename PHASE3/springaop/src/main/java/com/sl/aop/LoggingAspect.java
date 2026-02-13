@@ -38,10 +38,15 @@ public class LoggingAspect {
 	@Around("execution(* com.sl.FixedDeposit.breakFD(..))")
 	public void m4(ProceedingJoinPoint pjp) throws Throwable {
 		//System.out.println(" (LOG) m4 this is an Around type INTERCEPTOR/ADVICE ");
-		System.out.println(" (LOG) BEFORE break FD called.");	
+		System.out.println(" (LOG) BEFORE break FD called.");
+		long start = System.nanoTime();
 		
 		pjp.proceed();
 		
-		System.out.println(" (LOG) AFTER break FD called.");	
+		long end = System.nanoTime();
+		long timeTaken = (end - start) / 1_000_000;
+		
+		System.out.println(" (LOG) AFTER break FD called.");
+		System.out.println(" (PERF) break FD took " + timeTaken + " milli secs to execute");
 	}
 }

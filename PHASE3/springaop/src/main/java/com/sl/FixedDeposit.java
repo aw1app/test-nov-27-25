@@ -28,6 +28,12 @@ public class FixedDeposit {
 	public void breakFD() {
 		if (!isBroken())
 			setBroken(true);
+		
+		try {
+			Thread.sleep(100); // 100 ms
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public boolean isBroken() {
