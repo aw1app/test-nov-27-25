@@ -1,3 +1,8 @@
 TASK-1: Add two more test cases for add method
 
 TASK-2: Create two unit test cases for multiply method
+
+SPRING AOP
+
+SPRING-AOP-1: 
+Write another class FixedDepositAccount and implement an After advice for one of it's method say breakFD( ).
