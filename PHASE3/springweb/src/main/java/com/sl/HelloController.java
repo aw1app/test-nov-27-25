@@ -3,6 +3,7 @@ package com.sl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -29,11 +30,18 @@ public class HelloController {
 	@GetMapping("/hello-view-model")
 	public String helloFromViewWithAModel(ModelMap model) {
 		// any business logic we want to
-		
+
 		model.addAttribute("name", "Rudra");
 		model.addAttribute("age", 25);
 
 		return "hello-vw-model"; // hello-vw will resolve to the WEB-INF/views/hello-vw-model.jsp
+	}
+
+	// regex path pattern
+	@GetMapping("/{name:[a-z-]+}-{ipAddress:\\d+\\.\\d+\\.\\d+\\.\\d+}")
+	@ResponseBody
+	public String handle(@PathVariable("name") String name, @PathVariable("ipAddress") String ipAddress) {
+		return "<V2> name:" + name + " ip address " + ipAddress;
 	}
 
 }
