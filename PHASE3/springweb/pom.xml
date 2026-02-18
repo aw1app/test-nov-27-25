@@ -1,19 +1,21 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.sl</groupId>
-  <artifactId>springweb</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
-  
-  
-  <properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sl</groupId>
+	<artifactId>springweb</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+
+	<properties>
 		<org.springframework.version>6.1.5</org.springframework.version>
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
 	</properties>
-  
-  
-  <dependencies>
+
+
+	<dependencies>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -51,8 +53,8 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
-		
-		
+
+
 		<!-- Jakarta JSP -->
 		<dependency>
 			<groupId>jakarta.servlet</groupId>
@@ -68,25 +70,47 @@
 		</dependency>
 
 
+		<!-- Jackson JSON lib -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.17.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.17.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.17.0</version>
+		</dependency>
+
+
 	</dependencies>
-	
-	
+
+
 	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
+				<version>3.11.0</version>
 				<configuration>
-					<release>21</release>
+					<compilerArgs>
+						<arg>-parameters</arg>
+					</compilerArgs>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.3</version>
 			</plugin>
 		</plugins>
 	</build>
-  
-  
-  
+
+
 </project>

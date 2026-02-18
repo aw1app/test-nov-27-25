@@ -1,6 +1,9 @@
 package com.sl;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("product")
+@RequestMapping("products")
 public class ProductController {
 
 	@PostMapping("/new-product")
@@ -20,10 +23,16 @@ public class ProductController {
 	}
 
 	@GetMapping("/details/{id}")
-	@ResponseBody
-	public String getProduct(@PathVariable int id) {
+	public String getProduct(ModelMap model, @PathVariable int id) {
+		
+		Map<String, Object> product = Map.of(
+                "name", "Laptop",
+                "price", 50000
+        );
 
-		return "<V2> You want details product with id " + id;
+        model.addAttribute("product", product);
+
+		return "product";
 	}
 
 	
