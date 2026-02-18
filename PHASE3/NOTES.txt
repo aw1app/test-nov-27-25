@@ -5,5 +5,5 @@ Ensure we have the followinf folder structure when creating simple maven based s
 src\main\webapp
 src\main\webapp\WEB-INF
 src\main\webapp\WEB-INF\web.xml
-src\main\webapp\lib
+src\main\webapp\WEB-INF\lib
 src\main\webapp\WEB-INF\views
