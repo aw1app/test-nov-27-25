@@ -18,3 +18,9 @@ TASK-15:
 Enhance the ProductDAO with a method to get a single product given it's id.
 Implement a mapping in ProductController /products/details/{id} that will get the details of
 the product using ProductDAO and displays the product details using a JSP page.
+
+
+SPRING BOOT
+TASK-16: 
+In the spring boot project, add AboutController that will render about.jsp for /about.
+Verify the functionality in the browser. http://localhost:8080/about
