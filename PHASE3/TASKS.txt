@@ -11,3 +11,10 @@ SPRING-AOP-2:  Demonstrate that we can have many advices (interceptors) for the 
 Implement another After advice for FixedDeposit class's breakFD( ).
 
 SPRING-AOP-3:  Add an @AfterReturning advice for logging the deposit amount
+
+
+SPRING WEB JDBC
+TASK-15: 
+Enhance the ProductDAO with a method to get a single product given it's id.
+Implement a mapping in ProductController /products/details/{id} that will get the details of
+the product using ProductDAO and displays the product details using a JSP page.
