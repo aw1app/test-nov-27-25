@@ -28,7 +28,7 @@ public class Product {
 	@Column(name="price")
 	float price;
 	
-	@Column(name="decription")
-	String decription;	
+	@Column(name="description")
+	String description;	
 
 }
