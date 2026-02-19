@@ -7,6 +7,18 @@ public class Product {
 	String name;
 	float price;
 	String description;
+	
+	public Product() {
+		
+	}
+	
+	public Product(String name, float price, String description) {
+		super();
+		this.name = name;
+		this.price = price;
+		this.description = description;
+	}
+
 
 	// getters and setters
 	public int getId() {

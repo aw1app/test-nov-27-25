@@ -25,6 +25,12 @@ public class ProductDAO {
 		return products;
 	}
 
+	public int save(Product prod) {
+		String sql = "INSERT INTO PRODUCTS(name,price,description) VALUES(?,?,?)";
+		int count = jdbcTemplate.update(sql, prod.getName(), prod.getPrice(), prod.getDescription());
+		return count;
+	}
+
 }
 
 class ProductRowMapper implements RowMapper<Product> {
