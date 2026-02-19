@@ -11,4 +11,47 @@ src\main\webapp\WEB-INF\views
 
 
 
-TODO: ContentViewResolver - example when we use Postman
+TODO: ContentViewResolver - example when we use Postman.
+
+
+
+SPRING BOOT PROJECT CREATION 
+STEP-0: Down the generated zip file from https://start.spring.io/. Import it in your Eclipse IDE.
+
+Some manual steps to do always:
+
+1. Update pom.xml with these 4 dependencies:
+<!-- Jakarta JSP -->
+		<dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>jakarta.servlet.jsp.jstl</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+		</dependency>
+
+		<!-- JSP engine -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+
+2. Folder creation:
+src\main\webapp
+src\main\webapp\WEB-INF
+src\main\webapp\WEB-INF\views
+
+3. Update application.properties
+#JSP conf
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+
+
