@@ -24,3 +24,7 @@ SPRING BOOT
 TASK-16: 
 In the spring boot project, add AboutController that will render about.jsp for /about.
 Verify the functionality in the browser. http://localhost:8080/about
+
+
+SPRING DATA JPA
+TASK-17: Can you add links in product.jsp that takes the user back to the index page?
