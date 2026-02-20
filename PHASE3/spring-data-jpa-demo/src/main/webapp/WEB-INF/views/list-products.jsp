@@ -12,7 +12,7 @@ LIST OF PRODUCTS
 		<th>ID
 		<th>NAME
 		<th>PRICE
-		<th>DESCRIPTIOHN
+		<th>DESCRIPTION
 		<th>DETAILS
 	</tr>
 
