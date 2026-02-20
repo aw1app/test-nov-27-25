@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
 <!DOCTYPE html>
+<%@include file="header.jsp" %>
 
 <br>
 DETAILS OF PRODUCT
@@ -14,3 +15,6 @@ DETAILS OF PRODUCT
 		<li>Description: ${product.description}
 	</ul>
 </c:if>	
+
+
+

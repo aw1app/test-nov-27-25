@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
 <!DOCTYPE html>
-
+<%@include file="header.jsp" %>
 
 <br>
 LIST OF PRODUCTS

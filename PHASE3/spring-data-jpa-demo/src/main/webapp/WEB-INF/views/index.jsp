@@ -4,9 +4,9 @@
 <html>
 
 <body>
-<h1> Welcome to E Store </h1>
+<%@include file="header.jsp" %>
 
-<a href="${pageContext.request.contextPath}/products/list"> PRODUCTS </a>
+
 
 </body>
 </html>
