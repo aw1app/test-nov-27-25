@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sl.entity.Product;
+import com.sl.exception.ProductNotFoundException;
 import com.sl.repository.ProductRepository;
 
 @Controller
@@ -32,19 +33,22 @@ public class ProductController {
 		model.addAttribute("products", products);
 		
 		// demo exception handling
-		throw new RuntimeException("Exception from inside getAllProducts method");
+		//throw new RuntimeException("Exception from inside getAllProducts method");
 
-		//return "list-products"; // WEB-INF/views/list-products.jsp
+		return "list-products"; // WEB-INF/views/list-products.jsp
 	}
 
 	// detail a single product
 	@GetMapping("/details/{id}")
-	public String getAllProducts(ModelMap model, @PathVariable int id) {
+	public String getAllProducts(ModelMap model, @PathVariable int id) throws ProductNotFoundException {
 		Optional<Product> optionalProduct = productRepository.findById(id);
 
 		if (optionalProduct.isPresent()) {
 			Product product = optionalProduct.get();
 			model.addAttribute("product", product);
+		}else {
+			// if the product was found from DB throw ProductNotFoundExcption
+			throw new ProductNotFoundException("Product with id=" +id + " not found ");
 		}
 
 		return "product"; // WEB-INF/views/product.jsp
@@ -118,5 +122,16 @@ public class ProductController {
 		
 		return "error-page";
 	}
+	
+	// one more specific one
+	@ExceptionHandler(ProductNotFoundException.class)
+	public String handleProductNotFoundException(Exception ex, Model model) {
+		System.out.println("INSIDE handleProductNotFoundException");
+		
+		model.addAttribute("errorMessage", ex.getMessage());
+		
+		return "product-not-found-exception-page";
+	}
+	
 
 }
