@@ -5,6 +5,7 @@
 <a href="${pageContext.request.contextPath}/"> HOME </a>   |
 <a href="${pageContext.request.contextPath}/products/list"> PRODUCTS </a>   |
 <a href="${pageContext.request.contextPath}/add-product.jsp"> ADD PRODUCT </a>   |
+<a href="${pageContext.request.contextPath}/about"> About Us </a>   |
 </div>  
 <br>
 <hr>
