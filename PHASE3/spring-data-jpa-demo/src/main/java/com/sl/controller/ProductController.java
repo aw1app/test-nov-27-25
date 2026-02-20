@@ -53,6 +53,10 @@ public class ProductController {
 	}
 
 	// delete a product
+	@GetMapping("/delete-product/{id}")
+	public String deleteProduct(@PathVariable int id) {
+		// TASK-18
+	}
 
 	// edit and update a product
 
