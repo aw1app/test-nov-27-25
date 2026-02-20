@@ -67,13 +67,15 @@ public class ProductController {
 
 	// edit and update a product
 	@GetMapping("/edit-product/{id}")
-	public String editProductForm(ModelMap model, @PathVariable int id) {
+	public String editProductForm(ModelMap model, @PathVariable int id, RedirectAttributes redirectAttributes) {
 		Optional<Product> optionalProduct = productRepository.findById(id);
 
 		if (optionalProduct.isPresent()) {
 			Product product = optionalProduct.get();
 			model.addAttribute("product", product);
 			return "edit-product"; // WEB-INF/views/edit-product.jsp
+		}else {
+			redirectAttributes.addFlashAttribute("productNotFoundMessage","Product not Found!");
 		}
 
 		return "redirect:/products/list";
