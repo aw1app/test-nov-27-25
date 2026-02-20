@@ -4,6 +4,26 @@
 <!DOCTYPE html>
 <%@include file="header.jsp" %>
 
+<style>
+.success-message {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 60%;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+</style>
+
+<c:if test="${not empty successMessage}">
+    <div class="success-message">
+        ${successMessage}
+    </div>
+</c:if>
+
 <br>
 LIST OF PRODUCTS
 <br>

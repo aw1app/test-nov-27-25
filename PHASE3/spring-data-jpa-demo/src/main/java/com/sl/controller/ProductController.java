@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sl.entity.Product;
 import com.sl.repository.ProductRepository;
@@ -80,13 +81,18 @@ public class ProductController {
 	
 	
 	@PostMapping("/edit-product")
-	public String updateProduct(@ModelAttribute Product product) {
+	public String updateProduct(@ModelAttribute Product product, RedirectAttributes redirectAttributes) {
 		productRepository.save(product);
 
+		redirectAttributes.addFlashAttribute("successMessage","Product updated successfully!");
+		
 		return "redirect:/products/list";
 	}
 	
 	//TASK-19: After edit product is successful
 	// display a success message in the list products page.
+	
+	//TASK-20: If the user has given an invalid product id to edit
+	// display "Product Not found" Message on /products/list page.
 
 }
