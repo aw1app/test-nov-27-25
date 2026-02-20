@@ -49,7 +49,7 @@ public class ProductController {
 	public String addProduct(@ModelAttribute Product product) {
 		productRepository.save(product);
 		
-		return "redirect:/";
+		return "redirect:/products/list";
 	}
 
 	// delete a product
