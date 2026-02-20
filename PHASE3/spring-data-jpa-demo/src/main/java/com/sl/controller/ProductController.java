@@ -48,7 +48,7 @@ public class ProductController {
 	@PostMapping("/add-product")
 	public String addProduct(@ModelAttribute Product product) {
 		productRepository.save(product);
-		
+
 		return "redirect:/products/list";
 	}
 
@@ -56,14 +56,37 @@ public class ProductController {
 	@GetMapping("/delete-product/{id}")
 	public String deleteProduct(@PathVariable int id) {
 		Optional<Product> optionalProduct = productRepository.findById(id);
-		
+
 		if (optionalProduct.isPresent()) {
 			productRepository.deleteById(id);
 		}
-		
-		return "redirect:/products/list";		
+
+		return "redirect:/products/list";
 	}
 
 	// edit and update a product
+	@GetMapping("/edit-product/{id}")
+	public String editProductForm(ModelMap model, @PathVariable int id) {
+		Optional<Product> optionalProduct = productRepository.findById(id);
+
+		if (optionalProduct.isPresent()) {
+			Product product = optionalProduct.get();
+			model.addAttribute("product", product);
+			return "edit-product"; // WEB-INF/views/edit-product.jsp
+		}
+
+		return "redirect:/products/list";
+	}
+	
+	
+	@PostMapping("/edit-product")
+	public String updateProduct(@ModelAttribute Product product) {
+		productRepository.save(product);
+
+		return "redirect:/products/list";
+	}
+	
+	//TASK-19: After edit product is successful
+	// display a success message in the list products page.
 
 }
