@@ -14,6 +14,7 @@ LIST OF PRODUCTS
 		<th>PRICE
 		<th>DESCRIPTION
 		<th>DETAILS
+		<th>DELETE
 	</tr>
 
 	<c:forEach var="product" items="${products}">
@@ -23,6 +24,7 @@ LIST OF PRODUCTS
 			<td>${product.price}
 			<td>${product.description}
 			<td><a href="${pageContext.request.contextPath}/products/details/${product.id }"> DETAILS </a>
+			<td><a href="${pageContext.request.contextPath}/products/delete-product/${product.id }"> DELETE </a>
 		</tr>
 	</c:forEach>
 

@@ -52,10 +52,16 @@ public class ProductController {
 		return "redirect:/products/list";
 	}
 
-	// delete a product
+	// TASK-18 delete a product
 	@GetMapping("/delete-product/{id}")
 	public String deleteProduct(@PathVariable int id) {
-		// TASK-18
+		Optional<Product> optionalProduct = productRepository.findById(id);
+		
+		if (optionalProduct.isPresent()) {
+			productRepository.deleteById(id);
+		}
+		
+		return "redirect:/products/list";		
 	}
 
 	// edit and update a product
