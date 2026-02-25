@@ -183,11 +183,37 @@ public class ProductController {
 
 		return "product"; // WEB-INF/views/product.jsp
 	}
-	
-	// All products that have partial name match 
+
+	// All products that have partial name match
 	@GetMapping("/list/byname")
 	public String getAllProductsNameContains(ModelMap model, @RequestParam String name) {
 		List<Product> products = productRepository.findAllByNameContaining(name);
+
+		model.addAttribute("products", products);
+
+		// demo exception handling
+		// throw new RuntimeException("Exception from inside getAllProducts method");
+
+		return "list-products"; // WEB-INF/views/list-products.jsp
+	}
+
+	// All products that have price range match
+	@GetMapping("/list/byprice")
+	public String getAllProductsPriceRange(ModelMap model, @RequestParam float price1, @RequestParam float price2) {
+		List<Product> products = productRepository.findAllByPriceBetween(price1, price2);
+
+		model.addAttribute("products", products);
+
+		// demo exception handling
+		// throw new RuntimeException("Exception from inside getAllProducts method");
+
+		return "list-products"; // WEB-INF/views/list-products.jsp
+	}
+
+	// All products that have price range match
+	@GetMapping("/list/bynamelength")
+	public String getAllProductsPriceRange(ModelMap model, @RequestParam int nameLength) {
+		List<Product> products = productRepository.findProductsWithNameLength(nameLength);
 
 		model.addAttribute("products", products);
 
