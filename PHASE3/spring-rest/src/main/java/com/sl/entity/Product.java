@@ -8,11 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="products")
@@ -24,7 +20,7 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	int id;
+	Integer id;
 	
 	
 	@Size(min = 3, max = 12, message = "product name should be between 3 and 12 chars in length")
@@ -43,7 +39,7 @@ public class Product {
 		super();
 	}
 
-	public Product(int id,
+	public Product(Integer id,
 			@Size(min = 3, max = 12, message = "product name should be between 3 and 12 chars in length") String name,
 			@Min(value = 5, message = "Minimum price should be at least Rs. 5 ") @Max(value = 100000, message = "Maximum price should be at most Rs. 100000 ") Double price,
 			String description) {
@@ -57,11 +53,11 @@ public class Product {
 	@Column(name="description")
 	String description;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
