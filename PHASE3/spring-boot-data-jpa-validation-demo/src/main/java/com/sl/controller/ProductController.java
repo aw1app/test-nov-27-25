@@ -27,23 +27,23 @@ import jakarta.validation.Valid;
 @RequestMapping("products")
 public class ProductController {
 
-    private final AboutController aboutController;
+	private final AboutController aboutController;
 
 	@Autowired
 	ProductRepository productRepository;
 
-    ProductController(AboutController aboutController) {
-        this.aboutController = aboutController;
-    }
+	ProductController(AboutController aboutController) {
+		this.aboutController = aboutController;
+	}
 
 	@GetMapping("/list")
 	public String getAllProducts(ModelMap model) {
 		List<Product> products = productRepository.findAll();
 
 		model.addAttribute("products", products);
-		
+
 		// demo exception handling
-		//throw new RuntimeException("Exception from inside getAllProducts method");
+		// throw new RuntimeException("Exception from inside getAllProducts method");
 
 		return "list-products"; // WEB-INF/views/list-products.jsp
 	}
@@ -56,29 +56,42 @@ public class ProductController {
 		if (optionalProduct.isPresent()) {
 			Product product = optionalProduct.get();
 			model.addAttribute("product", product);
-		}else {
+		} else {
 			// if the product was found from DB throw ProductNotFoundExcption
-			throw new ProductNotFoundException("Product with id=" +id + " not found ");
+			throw new ProductNotFoundException("Product with id=" + id + " not found ");
 		}
 
 		return "product"; // WEB-INF/views/product.jsp
 	}
+
+	
+	// Add a new product
+	// Method to show the form initially
+	@GetMapping("/add-product")
+	public String showForm(Model model) {
+	    model.addAttribute("product", new Product()); // Give the form an object to bind to
+	    return "add-product"; // The name of your JSP
+	}
 	
 	
 	@PostMapping("/add-product")
-	public String addProduct(@Valid @ModelAttribute Product product,  BindingResult result,  RedirectAttributes redirectAttributes) {
-		
-		if(result.hasErrors()) {
-			
+	public String addProduct(@Valid @ModelAttribute Product product, BindingResult result,
+			RedirectAttributes redirectAttributes) {
+
+		if (result.hasErrors()) {
+
 			List<ObjectError> errors = result.getAllErrors();
-			for(ObjectError error : errors) {
+			for (ObjectError error : errors) {
 				System.out.println("VALIDATION ERROR MESSAGE " + error.getDefaultMessage());
-				redirectAttributes.addFlashAttribute("productValidationMessage",error.getDefaultMessage());
-			} 
-			
-			return "redirect:/add-product.jsp";   // return to form page
+				redirectAttributes.addFlashAttribute("productValidationMessage", error.getDefaultMessage());
+			}
+
+			result.getFieldErrors().forEach(
+					f -> System.out.println("Field: " + f.getField() + " Rejected Value: " + f.getRejectedValue()));
+
+			return "redirect:/products/add-product"; // return to form page
 		}
-		
+
 		productRepository.save(product);
 
 		return "redirect:/products/list";
@@ -105,55 +118,51 @@ public class ProductController {
 			Product product = optionalProduct.get();
 			model.addAttribute("product", product);
 			return "edit-product"; // WEB-INF/views/edit-product.jsp
-		}else {
-			redirectAttributes.addFlashAttribute("productNotFoundMessage","Product not Found!");
+		} else {
+			redirectAttributes.addFlashAttribute("productNotFoundMessage", "Product not Found!");
 		}
 
 		return "redirect:/products/list";
 	}
-	
-	
+
 	@PostMapping("/edit-product")
 	public String updateProduct(@ModelAttribute Product product, RedirectAttributes redirectAttributes) {
 		productRepository.save(product);
 
-		redirectAttributes.addFlashAttribute("successMessage","Product updated successfully!");
-		
+		redirectAttributes.addFlashAttribute("successMessage", "Product updated successfully!");
+
 		return "redirect:/products/list";
 	}
-	
-	
-	
+
 	// Handle Exception
 	// Generic exception
 	@ExceptionHandler(Exception.class)
 	public String handleException(Exception ex, Model model) {
 		System.out.println("INSIDE handleException");
-		
+
 		model.addAttribute("errorMessage", ex.getMessage());
-		
+
 		return "error-page";
 	}
-	
+
 	// handle specific one
 	@ExceptionHandler(RuntimeException.class)
 	public String handleRTException(Exception ex, Model model) {
 		System.out.println("INSIDE handleRTException");
-		
+
 		model.addAttribute("errorMessage", ex.getMessage());
-		
+
 		return "error-page";
 	}
-	
+
 	// one more specific one
 	@ExceptionHandler(ProductNotFoundException.class)
 	public String handleProductNotFoundException(Exception ex, Model model) {
 		System.out.println("INSIDE handleProductNotFoundException");
-		
+
 		model.addAttribute("errorMessage", ex.getMessage());
-		
+
 		return "product-not-found-exception-page";
 	}
-	
 
 }
