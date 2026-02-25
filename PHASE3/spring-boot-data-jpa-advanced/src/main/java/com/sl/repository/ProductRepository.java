@@ -26,5 +26,15 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	// But can write one, use HQL statement
 	@Query(value = "SELECT p FROM Product p WHERE LENGTH(p.name) = :n")
 	List<Product> findProductsWithNameLength(int n);
+	
+	// Task 21
+	
+	
+	// We can also SQL based queries
+	// Let's write a finder method that will return products whose name length is even number
+	@Query(value = "SELECT * from products WHERE LENGTH(name) % 2 = 0 ", nativeQuery = true)
+	List<Product> findProductsWithEvenNameLength();
+	
+	
 
 }

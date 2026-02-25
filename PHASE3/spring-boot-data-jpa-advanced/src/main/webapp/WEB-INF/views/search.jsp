@@ -28,6 +28,13 @@
 		method="GET">
 		<input name="nameLength"> <input type="submit" value="SEARCH BY NAME LENGTH">
 	</form>
+	
+	<br>
+	<form
+		action="${pageContext.request.contextPath}/products/list/bynamelength_iseven" 
+		method="GET">
+		<input type="submit" value="SEARCH NAME LENGTH is EVEN">
+	</form>
 
 </body>
 </html>

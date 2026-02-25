@@ -211,9 +211,24 @@ public class ProductController {
 	}
 
 	// All products that have price range match
+	// HQL based
 	@GetMapping("/list/bynamelength")
 	public String getAllProductsPriceRange(ModelMap model, @RequestParam int nameLength) {
 		List<Product> products = productRepository.findProductsWithNameLength(nameLength);
+
+		model.addAttribute("products", products);
+
+		// demo exception handling
+		// throw new RuntimeException("Exception from inside getAllProducts method");
+
+		return "list-products"; // WEB-INF/views/list-products.jsp
+	}
+
+	// SQL based query
+	// All products that have price range match
+	@GetMapping("/list/bynamelength_iseven")
+	public String getAllProductsNameLengthEven(ModelMap model) {
+		List<Product> products = productRepository.findProductsWithEvenNameLength();
 
 		model.addAttribute("products", products);
 
