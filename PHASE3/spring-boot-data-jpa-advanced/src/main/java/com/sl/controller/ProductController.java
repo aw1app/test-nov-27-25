@@ -183,5 +183,18 @@ public class ProductController {
 
 		return "product"; // WEB-INF/views/product.jsp
 	}
+	
+	// All products that have partial name match 
+	@GetMapping("/list/byname")
+	public String getAllProductsNameContains(ModelMap model, @RequestParam String name) {
+		List<Product> products = productRepository.findAllByNameContaining(name);
+
+		model.addAttribute("products", products);
+
+		// demo exception handling
+		// throw new RuntimeException("Exception from inside getAllProducts method");
+
+		return "list-products"; // WEB-INF/views/list-products.jsp
+	}
 
 }
