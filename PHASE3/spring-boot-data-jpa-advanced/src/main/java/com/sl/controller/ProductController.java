@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sl.entity.Product;
@@ -64,16 +65,14 @@ public class ProductController {
 		return "product"; // WEB-INF/views/product.jsp
 	}
 
-	
 	// Add a new product
 	// Method to show the form initially
 	@GetMapping("/add-product")
 	public String showForm(Model model) {
-	    model.addAttribute("product", new Product()); // Give the form an object to bind to
-	    return "add-product"; // The name of your JSP
+		model.addAttribute("product", new Product()); // Give the form an object to bind to
+		return "add-product"; // The name of your JSP
 	}
-	
-	
+
 	@PostMapping("/add-product")
 	public String addProduct(@Valid @ModelAttribute Product product, BindingResult result,
 			RedirectAttributes redirectAttributes) {
@@ -108,8 +107,9 @@ public class ProductController {
 
 		return "redirect:/products/list";
 	}
-	
-	// Task-17 : Add validation your edit product as well	just like we did for add product
+
+	// Task-17 : Add validation your edit product as well just like we did for add
+	// product
 
 	// edit and update a product
 	@GetMapping("/edit-product/{id}")
@@ -165,6 +165,23 @@ public class ProductController {
 		model.addAttribute("errorMessage", ex.getMessage());
 
 		return "product-not-found-exception-page";
+	}
+
+	// ADVANCED JPA
+	// detail a single product by it's name
+	@GetMapping("/details/byname")
+	public String getProductByName(ModelMap model, @RequestParam String name) throws ProductNotFoundException {
+		Optional<Product> optionalProduct = productRepository.findByName(name);
+
+		if (optionalProduct.isPresent()) {
+			Product product = optionalProduct.get();
+			model.addAttribute("product", product);
+		} else {
+			// if the product was found from DB throw ProductNotFoundExcption
+			throw new ProductNotFoundException("Product with name=" + name + " not found ");
+		}
+
+		return "product"; // WEB-INF/views/product.jsp
 	}
 
 }
