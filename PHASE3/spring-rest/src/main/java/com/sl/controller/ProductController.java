@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -59,9 +60,20 @@ public class ProductController {
 
 		Product savedProduct = productRepository.save(product);
 
-		return new ResponseEntity(savedProduct, HttpStatus.CREATED );
+		return new ResponseEntity(savedProduct, HttpStatus.CREATED ); // 
 	}
 	
 	// TASK-23: Implement delete-product end point.
+	@DeleteMapping("/delete-product/{id}")
+	public ResponseEntity<Void> deleteProduct(@PathVariable int id) {
+		
+		if (productRepository.existsById(id)) {
+			productRepository.deleteById(id);
+			return ResponseEntity.noContent().build(); // return http status code no 204 No Content
+		}
+		
+		return ResponseEntity.notFound().build(); // Returns 404
+		
+	}
 
 }
