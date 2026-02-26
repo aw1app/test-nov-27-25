@@ -61,5 +61,7 @@ public class ProductController {
 
 		return new ResponseEntity(savedProduct, HttpStatus.CREATED );
 	}
+	
+	// TASK-23: Implement delete-product end point.
 
 }
