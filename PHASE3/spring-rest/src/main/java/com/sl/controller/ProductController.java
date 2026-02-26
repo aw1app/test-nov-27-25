@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,7 +42,7 @@ public class ProductController {
 	
 	// create a new product
 	@PostMapping("/add-product")
-	public Product addProduct(@Valid @RequestBody Product product, BindingResult result) {
+	public ResponseEntity<Product> addProduct(@Valid @RequestBody Product product, BindingResult result) {
 
 		if (result.hasErrors()) {
 
@@ -57,7 +59,7 @@ public class ProductController {
 
 		Product savedProduct = productRepository.save(product);
 
-		return savedProduct;
+		return new ResponseEntity(savedProduct, HttpStatus.CREATED );
 	}
 
 }
