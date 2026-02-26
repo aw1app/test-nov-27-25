@@ -28,3 +28,10 @@ Verify the functionality in the browser. http://localhost:8080/about
 
 SPRING DATA JPA
 TASK-17: Can you add links in product.jsp that takes the user back to the index page?
+
+
+SPRING-REST-SERVER
+TASK-23: Implement delete-product end point.
+
+SPRING-REST-CLIENT
+Task -24 : Implement fetching and displaying a single todo.
