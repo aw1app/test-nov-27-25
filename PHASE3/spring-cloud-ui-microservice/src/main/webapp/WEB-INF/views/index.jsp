@@ -5,7 +5,9 @@
 
 <body>
 
-	<h1>Welcome to E Store</h1>
+	
+	<%@include file="header.jsp"%>
+
 
 
 
