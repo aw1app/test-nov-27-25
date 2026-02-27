@@ -35,3 +35,8 @@ TASK-23: Implement delete-product end point.
 
 SPRING-REST-CLIENT
 Task -24 : Implement fetching and displaying a single todo.
+
+
+SPRING MICRO SERVICES
+Task -25 :In our current project - add functionality to fetch single product details.
+Task -26 :In our current project - add functionality to detail single product 
