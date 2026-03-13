@@ -1,0 +1,11 @@
+Git --> Repositories:
+Git repo url: https://github.com/aw1app/test-nov-27-25
+
+Build step --> Invoke top-level Maven targets --> Invoke top-level Maven targets:
+Use Maven : Maven-3-19-4
+Pom.xml : PHASE3/springweb/pom.xml
+Goals: package -Dmaven.compiler.source=17 -Dmaven.compiler.target=17 -DskipTests
+
+Post-build Actions:
+Files to archive: PHASE3/springweb/target/*.war
+Delete workspace when build is done
