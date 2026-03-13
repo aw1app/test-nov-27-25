@@ -1,0 +1,6 @@
+Git --> Repositories:
+Git repo url: https://github.com/aw1app/test-nov-27-25
+
+Build step --> In Execute Shell -->
+cd PHASE4/DockerDemos/JavaApp
+docker build -t javaapp:latest .
